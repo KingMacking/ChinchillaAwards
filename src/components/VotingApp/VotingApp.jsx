@@ -19,7 +19,7 @@ function VotingApp() {
 
 	// Función para registrar los votos
 	const handleVote = async () => {
-		const { error: voteError } = await supabase.from("votes").insert([{ token, votes }]);
+		const { error: voteError } = await supabase.from("gf-awards-votes").insert([{ token, votes }]);
 
 		if (voteError) {
 			toast.error("Error al registrar los votos");
@@ -27,7 +27,7 @@ function VotingApp() {
 		}
 
 		const { error: tokenError } = await supabase
-			.from("tokens")
+			.from("gf-awards-tokens")
 			.update({ is_used: true })
 			.eq("token", token);
 
@@ -53,7 +53,7 @@ function VotingApp() {
 						<label>{v.categoria}</label>
 						<input
 							type='text'
-							value={v.voto}
+							defaultValue={v.voto}
 							onChange={(e) => handleVoteChange(v.categoria, e.target.value)}
 						/>
 					</div>

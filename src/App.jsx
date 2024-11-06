@@ -3,13 +3,11 @@ import "./App.css";
 import VotingApp from "./components/VotingApp/VotingApp";
 
 function App() {
-
 	return (
-			<div>
-                <Toaster position="top-center" richColors>
-					<VotingApp />
-				</Toaster>
-            </div>
+		<main className="bg-main h-svh w-svw">
+			<Toaster position='top-center' richColors />
+			<VotingApp />
+		</main>
 	);
 }
 
