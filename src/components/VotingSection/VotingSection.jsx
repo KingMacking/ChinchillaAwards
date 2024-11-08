@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { toast } from "sonner";
 
 const participants = ["Mati", "Aiden", "Agustin", "Row"];
+const FALSE_CATEGORIES = ["Mati", "Aiden", "Agustin", "Row"];
 
 function VotingSection({ categories, onVotesSubmit }) {
 	const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0); // Categoría actual
 	const [votes, setVotes] = useState(
-		categories.map((category) => ({
+		FALSE_CATEGORIES.map((category) => ({
 			categoria: category.name,
 			firstPlace: "",
 			secondPlace: "",

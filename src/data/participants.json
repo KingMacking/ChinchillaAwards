@@ -1,0 +1,98 @@
+[
+	{
+		"id": 1,
+		"name": "Matias Atzori",
+		"nickname": "Mati",
+		"image": ""
+	},
+	{
+		"id": 2,
+		"name": "Lucas Contreras",
+		"nickname": "Aiden",
+		"image": ""
+	},
+	{
+		"id": 3,
+		"name": "Agustin Brizuela",
+		"nickname": "Gugu",
+		"image": ""
+	},
+	{
+		"id": 4,
+		"name": "Augusto Theler",
+		"nickname": "Lauta",
+		"image": ""
+	},
+	{
+		"id": 5,
+		"name": "Juan Manuel Diaz",
+		"nickname": "Row",
+		"image": ""
+	},
+	{
+		"id": 6,
+		"name": "Juan Nicolau",
+		"nickname": "Juanchi",
+		"image": ""
+	},
+	{
+		"id": 7,
+		"name": "Juan Guevara",
+		"nickname": "Juan",
+		"image": ""
+	},
+	{
+		"id": 8,
+		"name": "Juaquin Degiovanni",
+		"nickname": "Klein",
+		"image": ""
+	},
+	{
+		"id": 9,
+		"name": "Joaquin Fontana",
+		"nickname": "Fansy",
+		"image": ""
+	},
+	{
+		"id": 10,
+		"name": "Sacha Frangella",
+		"nickname": "Sacha",
+		"image": ""
+	},
+	{
+		"id": 11,
+		"name": "Franco Aguado",
+		"nickname": "Awado",
+		"image": ""
+	},
+	{
+		"id": 12,
+		"name": "Alejo Torres",
+		"nickname": "JotaPe",
+		"image": ""
+	},
+	{
+		"id": 13,
+		"name": "Nicolas Menendez",
+		"nickname": "Nico",
+		"image": ""
+	},
+	{
+		"id": 14,
+		"name": "Lautaro Franco",
+		"nickname": "Laguati",
+		"image": ""
+	},
+	{
+		"id": 15,
+		"name": "Andres Capozzolo",
+		"nickname": "Andrew",
+		"image": ""
+	},
+	{
+		"id": 16,
+		"name": "Conrado Robert",
+		"nickname": "Conra",
+		"image": ""
+	}
+]

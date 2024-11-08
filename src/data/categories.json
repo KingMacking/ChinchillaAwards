@@ -1,0 +1,77 @@
+[
+	{
+		"id": 1,
+		"name": "TFT Player del año",
+		"description": "Se acredita a aquel que más jugó a Team Fight Tactics en el año."
+	},
+	{
+		"id": 2,
+		"name": "ZZZ del año",
+		"description": "Se acredita a aquel que mas durmió intentando seducir a alguien."
+	},
+	{
+		"id": 3,
+		"name": "Futbolista del año",
+		"description": "Se acredita a aquel que mas jugó al fútbol durante el año."
+	},
+	{
+		"id": 4,
+		"name": "Streamer del año",
+		"description": "Se acredita a aquel que mas y mejores streams hizo en el año."
+	},
+	{
+		"id": 5,
+		"name": "Laburante del año",
+		"description": "Se acredita a aquel que mas trabajó en el año."
+	},
+	{
+		"id": 6,
+		"name": "Desocupado del año",
+		"description": "Se acredita a aquel que no trabajó nada en el año."
+	},
+	{
+		"id": 7,
+		"name": "Futbolero del año",
+		"description": "Se acredita a aquel que mas supo de futbol durante el año."
+	},
+	{
+		"id": 8,
+		"name": "Estrellita del año",
+		"description": "Se acredita a aquel que mas trabajo costo para que vaya o haga alguna cosa."
+	},
+	{
+		"id": 9,
+		"name": "Pollera del año",
+		"description": "Se acredita a aquel que amó muchísimo a la pareja y se olvidó de la banda."
+	},
+	{
+		"id": 10,
+		"name": "Gaga del año",
+		"description": "Se acredita a aquel que mas actitudes de viejo puto tuvo."
+	},
+	{
+		"id": 11,
+		"name": "Bot del año",
+		"description": "Se acredita a aquel que mas comentarios de bot tuvo en el año."
+	},
+	{
+		"id": 12,
+		"name": "Desaparecido del año",
+		"description": "Se acredita a aquel que desapareció del grupo."
+	},
+	{
+		"id": 13,
+		"name": "Lolero del año",
+		"description": "Se acredita a aquel que mas league of legends jugó durante el año."
+	},
+	{
+		"id": 14,
+		"name": "Moño del año",
+		"description": "Se acredita a aquel que dijo la frase mas regalada del año."
+	},
+	{
+		"id": 15,
+		"name": "GF del Año",
+		"description": "Se acredita al Goldfinch que mas se destacó durante el año. Siendo el mejor de los nuestros."
+	}
+]
