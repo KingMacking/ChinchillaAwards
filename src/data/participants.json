@@ -3,96 +3,96 @@
 		"id": 1,
 		"name": "Matias Atzori",
 		"nickname": "Mati",
-		"image": ""
+		"image": "mati.jpg"
 	},
 	{
 		"id": 2,
 		"name": "Lucas Contreras",
 		"nickname": "Aiden",
-		"image": ""
+		"image": "aiden.jpg"
 	},
 	{
 		"id": 3,
 		"name": "Agustin Brizuela",
 		"nickname": "Gugu",
-		"image": ""
+		"image": "agustin.jpg"
 	},
 	{
 		"id": 4,
 		"name": "Augusto Theler",
 		"nickname": "Lauta",
-		"image": ""
+		"image": "lauta.jpg"
 	},
 	{
 		"id": 5,
 		"name": "Juan Manuel Diaz",
 		"nickname": "Row",
-		"image": ""
+		"image": "row.jpg"
 	},
 	{
 		"id": 6,
 		"name": "Juan Nicolau",
 		"nickname": "Juanchi",
-		"image": ""
+		"image": "juanchi.jpg"
 	},
 	{
 		"id": 7,
 		"name": "Juan Guevara",
 		"nickname": "Juan",
-		"image": ""
+		"image": "juan.jpg"
 	},
 	{
 		"id": 8,
 		"name": "Juaquin Degiovanni",
 		"nickname": "Klein",
-		"image": ""
+		"image": "klein.jpg"
 	},
 	{
 		"id": 9,
 		"name": "Joaquin Fontana",
-		"nickname": "Fansy",
-		"image": ""
+		"nickname": "Fanzy",
+		"image": "fanzy.jpg"
 	},
 	{
 		"id": 10,
 		"name": "Sacha Frangella",
 		"nickname": "Sacha",
-		"image": ""
+		"image": "sacha.jpg"
 	},
 	{
 		"id": 11,
 		"name": "Franco Aguado",
 		"nickname": "Awado",
-		"image": ""
+		"image": "awado.jpg"
 	},
 	{
 		"id": 12,
 		"name": "Alejo Torres",
-		"nickname": "JotaPe",
-		"image": ""
+		"nickname": "Jotape",
+		"image": "jp.jpg"
 	},
 	{
 		"id": 13,
 		"name": "Nicolas Menendez",
 		"nickname": "Nico",
-		"image": ""
+		"image": "nico.jpg"
 	},
 	{
 		"id": 14,
 		"name": "Lautaro Franco",
 		"nickname": "Laguati",
-		"image": ""
+		"image": "laguati.jpg"
 	},
 	{
 		"id": 15,
 		"name": "Andres Capozzolo",
 		"nickname": "Andrew",
-		"image": ""
+		"image": "andres.jpg"
 	},
 	{
 		"id": 16,
 		"name": "Conrado Robert",
 		"nickname": "Conra",
-		"image": ""
+		"image": "conra.jpg"
 	}
 ]

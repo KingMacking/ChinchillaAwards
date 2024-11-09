@@ -3,23 +3,15 @@ import { supabase } from "../../supabaseClient";
 import LoginScreen from "../LoginScreen/LoginScreen";
 import { toast } from "sonner";
 import VotingSection from "../VotingSection/VotingSection";
+import CATEGORIES from '../../data/categories.json'
+import PARTICIPANTS from '../../data/participants.json'
+
 
 function VotingApp() {
 	const [token, setToken] = useState(null);
-	const [votationCompleted, setVotationCompleted] = useState(false);
-	const [votes, setVotes] = useState([
-		{ categoria: "mejor_pelicula", voto: "" },
-		{ categoria: "mejor_actor", voto: "" },
-		{ categoria: "mejor_director", voto: "" },
-	]);
-
-	// Función para cambiar los votos
-	const handleVoteChange = (category, vote) => {
-		setVotes(votes.map((v) => (v.categoria === category ? { ...v, vote } : v)));
-	};
 
 	// Función para registrar los votos
-	const handleVote = async () => {
+	const handleVote = async (votes) => {
 		const { error: voteError } = await supabase.from("gf-awards-votes").insert([{ token, votes }]);
 
 		if (voteError) {
@@ -45,9 +37,9 @@ function VotingApp() {
 	}
 
 	return (
-		<div>
-			<VotingSection />
-		</div>
+		<main className="flex items-center h-full">
+			<VotingSection categories={CATEGORIES} participants={PARTICIPANTS} onVotesSubmit={handleVote}/>
+		</main>
 	);
 }
 
