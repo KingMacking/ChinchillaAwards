@@ -22,7 +22,7 @@ function LoginScreen() {
 
 	return (
 		<div className='flex flex-col items-center justify-center h-full max-w-sm p-8 mx-auto text-center'>
-			<img src='/assets/logo-big.svg' alt='Logo' className='mb-10' />
+			<img src='/assets/thechinchillaawardslogo.jpg' alt='Logo' className='mb-10' />
 			<h2 className='mb-4 text-3xl font-semibold text-white'>Iniciar sesión</h2>
 			<p className='mb-6 text-white'>
 				Inicia sesión con tu cuenta de Google para participar.
