@@ -8,6 +8,9 @@ function LoginScreen() {
 		try {
 			const { error } = await supabase.auth.signInWithOAuth({
 				provider: "google",
+				options: {
+					redirectTo: 'http://thechinchillaawards.netlify.app'
+				}
 			});
 			if (error) {
 				toast.error("Error al iniciar sesión con Google.");
