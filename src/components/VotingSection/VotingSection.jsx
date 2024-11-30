@@ -69,7 +69,7 @@ function VotingSection({ categories, onVotesSubmit, participants }) {
 	};
 
 	return (
-		<div className='w-full max-w-2xl p-6 mx-auto text-white bg-black bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
+		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#0C1F3E] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 			<h2 className='mb-2 text-4xl font-bold text-center text-transparent bg-clip-text bg-gold-gradient'>
 				{currentCategory.name}
 			</h2>
