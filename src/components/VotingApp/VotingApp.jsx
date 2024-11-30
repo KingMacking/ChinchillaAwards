@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { supabase } from "../../supabaseClient";
-import LoginScreen from "../LoginScreen/LoginScreen";
 import { toast } from "sonner";
+import LoginScreen from "../LoginScreen/LoginScreen";
 import VotingSection from "../VotingSection/VotingSection";
 import CATEGORIES from '../../data/categories.json'
 import PARTICIPANTS from '../../data/participants.json'
