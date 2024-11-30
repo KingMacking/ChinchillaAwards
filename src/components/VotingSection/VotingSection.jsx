@@ -71,7 +71,7 @@ function VotingSection({ categories, onVotesSubmit, participants, handleLogout }
 	};
 
 	return (
-		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#0C1F3E] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
+		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 			<h2 className='mb-2 text-4xl font-bold text-center text-transparent bg-clip-text bg-gold-gradient'>
 				{currentCategory.name}
 			</h2>
@@ -125,7 +125,7 @@ function VotingSection({ categories, onVotesSubmit, participants, handleLogout }
 						? "Siguiente categoría"
 						: "Enviar votos"}
 				</button>
-				<button className="px-4 py-2 font-semibold text-white rounded-lg bg-secondary" onClick={() => handleLogout}>Logout</button>
+				<button className="px-4 py-2 font-semibold text-white rounded-lg bg-secondary" onClick={() => handleLogout()}>Logout</button>
 			</div>
 		</div>
 	);
