@@ -13,7 +13,7 @@ function VotingApp() {
 
 	// Verificar si el usuario ya está autenticado
 	useEffect(() => {
-		const session = supabase.auth.session();
+		const session = supabase.auth.getSession()
 		setUser(session?.user ?? null);
 
 		const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
