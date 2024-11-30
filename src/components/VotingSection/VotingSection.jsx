@@ -76,7 +76,7 @@ function VotingSection({ categories, onVotesSubmit, participants }) {
 			<p className='mb-2 text-center text-white text-balance'>{currentCategory.description}</p>
 			<p className='mb-8 text-xl font-bold text-center text-white'>{currentCategoryIndex + 1}/{categories.length}</p>
 
-			<iframe src="https://www.youtube.com/watch?v=2UsXEsJzOu8" frameborder="0"></iframe>
+			<iframe src="https://www.youtube.com/embed/2UsXEsJzOu8/" frameborder="0"></iframe>
 
 			<div className='flex flex-col items-start justify-between my-10 mt-4'>
 				{(votes[currentCategoryIndex].firstPlace ||
