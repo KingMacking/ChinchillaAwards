@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "sonner";
 
-function VotingSection({ categories, onVotesSubmit, participants }) {
+function VotingSection({ categories, onVotesSubmit, participants, handleLogout }) {
 	const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
 	const [votes, setVotes] = useState(
 		categories.map((category) => ({
@@ -59,6 +59,8 @@ function VotingSection({ categories, onVotesSubmit, participants }) {
 			)
 		);
 	};
+
+	
 
 	const getParticipantName = (id) => {
 		const participant = participants.find((p) => p.id === id);
@@ -123,6 +125,7 @@ function VotingSection({ categories, onVotesSubmit, participants }) {
 						? "Siguiente categoría"
 						: "Enviar votos"}
 				</button>
+				<button className="px-4 py-2 font-semibold text-white rounded-lg bg-secondary" onClick={() => handleLogout}>Logout</button>
 			</div>
 		</div>
 	);
