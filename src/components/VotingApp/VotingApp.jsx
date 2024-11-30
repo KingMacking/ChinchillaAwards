@@ -8,7 +8,6 @@ import PARTICIPANTS from '../../data/participants.json'
 
 
 function VotingApp() {
-	const [token, setToken] = useState(null);
 	const [user, setUser] = useState(null);
 
 	// Verificar si el usuario ya está autenticado
@@ -25,29 +24,23 @@ function VotingApp() {
 
 	// Función para registrar los votos
 	const handleVote = async (votes) => {
-		const { error: voteError } = await supabase.from("gf-awards-votes").insert([{ token, votes }]);
+		const { error: voteError } = await supabase.from("chinchilla-awards-votes").insert([{ email: user.email, votes }]);
 
 		if (voteError) {
 			toast.error("Error al registrar los votos");
 			return;
-		}
-
-		const { error: tokenError } = await supabase
-			.from("gf-awards-tokens")
-			.update({ is_used: true })
-			.eq("token", token);
-
-		if (tokenError) {
-			toast.error("Error al actualizar el token.");
 		} else {
 			toast.success("Votos registrados con éxito.");
-			setToken(null); // Reseteamos el estado del token para simular logout
+			setUser(null); // Reseteamos el estado del user para simular logout
+			setTimeout(() => { toast.info('¡Gracias por votar en los Chinchilla Awards!') }, 1500)
 		}
 	};
 
 	if (!user) {
 		return <LoginScreen />;
 	}
+	console.log(user);
+	
 
 	return (
 		<main className="flex items-center h-full">

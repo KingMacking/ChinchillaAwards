@@ -14,11 +14,9 @@ function LoginScreen() {
 			});
 			if (error) {
 				toast.error("Error al iniciar sesión con Google.");
-				console.error(error);
 			}
 		} catch (error) {
 			toast.error("Algo salió mal. Por favor, intente nuevamente.");
-			console.error(error);
 		}
 	};
 
