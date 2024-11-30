@@ -24,7 +24,7 @@ function VotingApp() {
 
 	// Función para registrar los votos
 	const handleVote = async (votes) => {
-		const { error: voteError } = await supabase.from("chinchilla-awards-votes").insert([{ email: user.email, votes }]);
+		const { error: voteError } = await supabase.from("chinchilla-awards-votes").insert([{ user_email: user.email, user_votes: votes }]);
 
 		if (voteError) {
 			toast.error("Error al registrar los votos");

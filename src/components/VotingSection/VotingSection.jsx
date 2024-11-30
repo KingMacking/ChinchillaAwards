@@ -76,35 +76,7 @@ function VotingSection({ categories, onVotesSubmit, participants }) {
 			<p className='mb-2 text-center text-white text-balance'>{currentCategory.description}</p>
 			<p className='mb-8 text-xl font-bold text-center text-white'>{currentCategoryIndex + 1}/{categories.length}</p>
 
-			<div className='grid grid-cols-4 gap-4 mb-2'>
-				{participants.map((participant) => (
-					<button
-						key={participant.id}
-						onClick={() => handleSelect(participant.id)}
-						className={`relative p-2 rounded-lg overflow-hidden bg-center bg-cover min-h-28
-							${votes[currentCategoryIndex].firstPlace === participant.id ? "ring-4 ring-primary" : ""}
-							${votes[currentCategoryIndex].secondPlace === participant.id ? "ring-4 ring-secondary" : ""}
-							ring-2 ring-gray-600`}
-						style={{ backgroundImage: `url(/assets/participants-pictures/${participant.image})` }}
-					>
-						{/* Indicador de primer o segundo puesto */}
-						{votes[currentCategoryIndex].firstPlace === participant.id && (
-							<span className='absolute flex items-center justify-center px-2 py-1 font-bold bg-black rounded-full text-md w-7 h-7 top-2 right-2 text-primary'>
-								1
-							</span>
-						)}
-						{votes[currentCategoryIndex].secondPlace === participant.id && (
-							<span className='absolute flex items-center justify-center px-2 py-1 font-bold bg-black rounded-full text-md w-7 h-7 top-2 right-2 text-secondary'>
-								2
-							</span>
-						)}
-
-						<div className='absolute inset-x-0 bottom-0 p-2 font-semibold text-center text-white bg-gradient-to-t from-black to-transparent'>
-							{participant.nickname || participant.name}
-						</div>
-					</button>
-				))}
-			</div>
+			<iframe src="https://www.youtube.com/watch?v=2UsXEsJzOu8" frameborder="0"></iframe>
 
 			<div className='flex flex-col items-start justify-between my-10 mt-4'>
 				{(votes[currentCategoryIndex].firstPlace ||
