@@ -9,6 +9,19 @@ import PARTICIPANTS from '../../data/participants.json'
 
 function VotingApp() {
 	const [token, setToken] = useState(null);
+	const [user, setUser] = useState(null);
+
+	// Verificar si el usuario ya está autenticado
+	useEffect(() => {
+		const session = supabase.auth.session();
+		setUser(session?.user ?? null);
+
+		const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+			setUser(session?.user ?? null);
+		});
+
+		return () => listener.unsubscribe();
+	}, []);
 
 	// Función para registrar los votos
 	const handleVote = async (votes) => {
@@ -32,8 +45,8 @@ function VotingApp() {
 		}
 	};
 
-	if (!token) {
-		return <LoginScreen onLoginSuccess={setToken} />;
+	if (!user) {
+		return <LoginScreen />;
 	}
 
 	return (
