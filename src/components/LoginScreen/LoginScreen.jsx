@@ -21,9 +21,9 @@ function LoginScreen() {
 	};
 
 	return (
-		<div className='flex flex-col items-center justify-center h-full max-w-sm p-8 mx-auto text-center'>
+		<div className='flex flex-col items-center justify-center h-full max-w-sm p-8 mx-auto text-center bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 			<img src='/assets/thechinchillaawardslogo.png' alt='Logo' className='mb-10' />
-			<h2 className='mb-4 text-3xl font-semibold text-white'>Iniciar sesión</h2>
+			<h2 className='mb-4 text-3xl font-semibold text-center text-white'>Iniciar sesión</h2>
 			<p className='mb-6 text-white'>
 				Inicia sesión con tu cuenta de Google para participar.
 			</p>

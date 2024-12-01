@@ -43,7 +43,7 @@ function VotingSection({ categories, onVotesSubmit, handleLogout }) {
 	return (
 		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 			{/* Título */}
-			<h2 className='mb-4 text-4xl font-bold text-center text-primary'>
+			<h2 className='mb-8 text-6xl font-bold text-center uppercase text-primary'>
 				{currentCategory.name}
 			</h2>
 

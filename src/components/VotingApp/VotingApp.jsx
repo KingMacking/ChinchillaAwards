@@ -56,7 +56,7 @@ function VotingApp() {
 	console.log(user);
 
 	return (
-		<main className='flex items-center h-full'>
+		<main className='flex items-center h-full overflow-scroll'>
 			<VotingSection
 				categories={CATEGORIES}
 				onVotesSubmit={handleVote}
