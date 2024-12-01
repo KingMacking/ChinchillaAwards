@@ -22,6 +22,8 @@ function VotingApp() {
 
 	// Función para registrar los votos
 	const handleVote = async (votes) => {
+		console.log({user_email: user.email, user_votes: votes});
+		
 		const { error: voteError } = await supabase
 			.from("chinchilla-awards-votes-test")
 			.insert([{ user_email: user.email, user_votes: votes }]);
