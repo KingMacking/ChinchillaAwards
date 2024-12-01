@@ -51,7 +51,7 @@ function VotingSection({ categories, onVotesSubmit, handleLogout }) {
 			<iframe
 				src='https://www.youtube.com/embed/2UsXEsJzOu8/'
 				frameBorder='0'
-				className='w-full h-64 rounded-lg'
+				className='w-full h-[450px] rounded-lg'
 				allowFullScreen
 			></iframe>
 
@@ -65,19 +65,17 @@ function VotingSection({ categories, onVotesSubmit, handleLogout }) {
 						<div
 							key={participant.id}
 							onClick={() => handleVoteChange(participant.id)}
-							className={`relative flex flex-col items-center justify-center p-4 text-center bg-black rounded-lg cursor-pointer ${
+							className={`relative cursor-pointer transition-all duration-300 ${
 								isSelected
 									? "transform -translate-y-2 opacity-100"
 									: "opacity-50 hover:opacity-100"
-							} transition-all duration-300`}
+							}`}
 						>
-							<div
-								className='w-full h-32 bg-center bg-cover rounded-md'
-								style={{
-									backgroundImage: `url(/assets/participants-pictures/${participant.image})`,
-								}}
-							></div>
-							<p className='mt-4 text-lg font-semibold'>{participant.name}</p>
+							<img
+								src={`/assets/participants-pictures/${participant.image}`}
+								alt={participant.name}
+								className='object-cover w-full h-full rounded-lg'
+							/>
 						</div>
 					);
 				})}
