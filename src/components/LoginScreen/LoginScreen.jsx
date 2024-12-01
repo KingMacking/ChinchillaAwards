@@ -6,16 +6,16 @@ function LoginScreen() {
 	// Función para manejar el login con Google
 	const handleGoogleLogin = async () => {
 		try {
-			const { error } = await supabase.auth.signInWithOAuth({
-				provider: "google",
-				options: {
-					redirectTo: 'http://thechinchillaawards.netlify.app'
-				}
-			});
+			const { error } = await supabase.auth
+				.signInWithOAuth({
+					provider: "google",
+					options: {
+						redirectTo: "http://thechinchillaawards.netlify.app",
+					},
+				})
+				.then(toast.success("Sesión iniciada correctamente, ya puedes votar"));
 			if (error) {
 				toast.error("Error al iniciar sesión con Google.");
-			} else {
-				toast.success("Sesión iniciada correctamente, ya puedes votar")
 			}
 		} catch (error) {
 			toast.error("Algo salió mal. Por favor, intente nuevamente.");
@@ -24,7 +24,7 @@ function LoginScreen() {
 
 	return (
 		<div className='flex flex-col items-center justify-center w-full h-full'>
-			<div className="bg-[#000816] bg-opacity-50 rounded-lg h-auto p-8 shadow-md backdrop-blur-md max-w-sm text-center">
+			<div className='bg-[#000816] bg-opacity-50 rounded-lg h-auto p-8 shadow-md backdrop-blur-md max-w-sm text-center'>
 				<img src='/assets/thechinchillaawardslogo.png' alt='Logo' className='mb-10' />
 				<p className='mb-6 text-white'>
 					Inicia sesión con tu cuenta de Google para participar.
