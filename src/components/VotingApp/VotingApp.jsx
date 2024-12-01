@@ -4,7 +4,6 @@ import { toast } from "sonner";
 import LoginScreen from "../LoginScreen/LoginScreen";
 import VotingSection from "../VotingSection/VotingSection";
 import CATEGORIES from "../../data/categories.json";
-import PARTICIPANTS from "../../data/participants.json";
 
 function VotingApp() {
 	const [user, setUser] = useState(null);
