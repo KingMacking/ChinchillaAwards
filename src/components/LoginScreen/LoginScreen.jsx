@@ -14,6 +14,8 @@ function LoginScreen() {
 			});
 			if (error) {
 				toast.error("Error al iniciar sesión con Google.");
+			} else {
+				toast.success("Sesión iniciada correctamente, ya puedes votar")
 			}
 		} catch (error) {
 			toast.error("Algo salió mal. Por favor, intente nuevamente.");
@@ -21,19 +23,20 @@ function LoginScreen() {
 	};
 
 	return (
-		<div className='flex flex-col items-center justify-center h-full max-w-sm p-8 mx-auto text-center bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
-			<img src='/assets/thechinchillaawardslogo.png' alt='Logo' className='mb-10' />
-			<h2 className='mb-4 text-3xl font-semibold text-center text-white'>Iniciar sesión</h2>
-			<p className='mb-6 text-white'>
-				Inicia sesión con tu cuenta de Google para participar.
-			</p>
+		<div className='flex flex-col items-center justify-center w-full h-full'>
+			<div className="bg-[#000816] bg-opacity-50 rounded-lg h-auto p-8 shadow-md backdrop-blur-md max-w-sm text-center">
+				<img src='/assets/thechinchillaawardslogo.png' alt='Logo' className='mb-10' />
+				<p className='mb-6 text-white'>
+					Inicia sesión con tu cuenta de Google para participar.
+				</p>
 
-			<button
-				onClick={handleGoogleLogin}
-				className='w-full p-3 font-medium text-black transition-all rounded-md bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-secondary'
-			>
-				Iniciar sesión con Google
-			</button>
+				<button
+					onClick={handleGoogleLogin}
+					className='w-full p-3 font-medium text-black transition-all rounded-md bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-secondary'
+				>
+					Iniciar sesión con Google
+				</button>
+			</div>
 		</div>
 	);
 }

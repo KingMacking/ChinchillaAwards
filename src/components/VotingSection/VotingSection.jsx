@@ -67,8 +67,8 @@ function VotingSection({ categories, onVotesSubmit, handleLogout }) {
 							onClick={() => handleVoteChange(participant.id)}
 							className={`relative cursor-pointer transition-all duration-300 ${
 								isSelected
-									? "transform -translate-y-2 opacity-100"
-									: "opacity-50 hover:opacity-100"
+									? "transform -translate-y-2 opacity-100 grayscale-0"
+									: "opacity-50 hover:opacity-100 grayscale hover:grayscale-0"
 							}`}
 						>
 							<img
