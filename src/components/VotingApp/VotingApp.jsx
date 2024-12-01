@@ -59,7 +59,6 @@ function VotingApp() {
 		<main className='flex items-center h-full'>
 			<VotingSection
 				categories={CATEGORIES}
-				participants={PARTICIPANTS}
 				onVotesSubmit={handleVote}
 				handleLogout={handleLogout}
 			/>
