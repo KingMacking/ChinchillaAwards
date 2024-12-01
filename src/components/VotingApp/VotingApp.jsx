@@ -23,7 +23,7 @@ function VotingApp() {
 	// Función para registrar los votos
 	const handleVote = async (votes) => {
 		const { error: voteError } = await supabase
-			.from("chinchilla-awards-votes")
+			.from("chinchilla-awards-votes-test")
 			.insert([{ user_email: user.email, user_votes: votes }]);
 
 		if (voteError) {
@@ -56,7 +56,7 @@ function VotingApp() {
 	console.log(user);
 
 	return (
-		<main className='flex items-center h-full overflow-scroll'>
+		<main className='flex items-start h-full py-12 overflow-scroll'>
 			<VotingSection
 				categories={CATEGORIES}
 				onVotesSubmit={handleVote}
