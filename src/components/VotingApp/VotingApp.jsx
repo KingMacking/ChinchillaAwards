@@ -31,10 +31,10 @@ function VotingApp() {
 			return;
 		} else {
 			toast.success("Votos registrados con éxito.");
-			setUser(null); // Reseteamos el estado del user para simular logout
 			setTimeout(() => {
 				toast.info("¡Gracias por votar en los Chinchilla Awards!");
 			}, 1500);
+			setUser(null); // Reseteamos el estado del user para simular logout
 		}
 	};
 
