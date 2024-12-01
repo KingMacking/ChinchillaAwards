@@ -1,77 +1,130 @@
 [
 	{
 		"id": 1,
-		"name": "TFT Player del año",
-		"description": "Se acredita a aquel que más jugó a Team Fight Tactics en el año."
+		"name": "Valorant Player",
+		"participants": [
+			{ "id": 1, "name": "MikamiNT", "image": "MikamiNT.jpg" },
+			{ "id": 2, "name": "OGTumba", "image": "OGTumba.jpg" },
+			{ "id": 3, "name": "TheSensei22", "image": "TheSensei22.jpg" },
+			{ "id": 4, "name": "Evanfall", "image": "Evanfall.jpg" },
+			{ "id": 5, "name": "Princesskenobi", "image": "Princesskenobi.jpg" },
+			{ "id": 6, "name": "ka_ssy", "image": "ka_ssy.jpg" }
+		]
 	},
 	{
 		"id": 2,
-		"name": "ZZZ del año",
-		"description": "Se acredita a aquel que mas durmió intentando seducir a alguien."
+		"name": "Apex Player",
+		"participants": [
+			{ "id": 1, "name": "FerVonLaiho", "image": "FerVonLaiho.jpg" },
+			{ "id": 2, "name": "Maruuhchan", "image": "Maruuhchan.jpg" },
+			{ "id": 3, "name": "Madmaiik", "image": "Madmaiik.jpg" },
+			{ "id": 4, "name": "Bacowine", "image": "Bacowine.jpg" },
+			{ "id": 5, "name": "Kurevvv", "image": "Kurevvv.jpg" },
+			{ "id": 6, "name": "Nightray_97", "image": "Nightray_97.jpg" }
+		]
 	},
 	{
 		"id": 3,
-		"name": "Futbolista del año",
-		"description": "Se acredita a aquel que mas jugó al fútbol durante el año."
+		"name": "LoL Player",
+		"participants": [
+			{ "id": 1, "name": "xTHExNEAx", "image": "xTHExNEAx.jpg" },
+			{ "id": 2, "name": "LalyGerald", "image": "LalyGerald.jpg" },
+			{ "id": 3, "name": "XimeWilliams", "image": "XimeWilliams.jpg" },
+			{ "id": 4, "name": "Tinn1e", "image": "Tinn1e.jpg" },
+			{ "id": 5, "name": "pardk72", "image": "pardk72.jpg" },
+			{ "id": 6, "name": "JotaN8", "image": "JotaN8.jpg" }
+		]
 	},
 	{
 		"id": 4,
-		"name": "Streamer del año",
-		"description": "Se acredita a aquel que mas y mejores streams hizo en el año."
+		"name": "Overwatch Player",
+		"participants": [
+			{ "id": 1, "name": "KanonFlora", "image": "KanonFlora.jpg" },
+			{ "id": 2, "name": "sGleen", "image": "sGleen.jpg" },
+			{ "id": 3, "name": "MiemMiem", "image": "MiemMiem.jpg" },
+			{ "id": 4, "name": "Zardecay", "image": "Zardecay.jpg" },
+			{ "id": 5, "name": "SoyPainn", "image": "SoyPainn.jpg" },
+			{ "id": 6, "name": "Juns33", "image": "Juns33.jpg" }
+		]
 	},
 	{
 		"id": 5,
-		"name": "Laburante del año",
-		"description": "Se acredita a aquel que mas trabajó en el año."
+		"name": "CS Player",
+		"participants": [
+			{ "id": 1, "name": "TuteCu", "image": "TuteCu.jpg" },
+			{ "id": 2, "name": "AltairCreeds", "image": "AltairCreeds.jpg" },
+			{ "id": 3, "name": "zukk96", "image": "zukk96.jpg" },
+			{ "id": 4, "name": "Gabito", "image": "Gabito.jpg" }
+		]
 	},
 	{
 		"id": 6,
-		"name": "Desocupado del año",
-		"description": "Se acredita a aquel que no trabajó nada en el año."
+		"name": "Streamer de variedad",
+		"participants": [
+			{ "id": 1, "name": "Tasher", "image": "Tasher.jpg" },
+			{ "id": 2, "name": "WichitaGames", "image": "WichitaGames.jpg" },
+			{ "id": 3, "name": "AcaViciando", "image": "AcaViciando.jpg" },
+			{ "id": 4, "name": "Gelatita", "image": "Gelatita.jpg" },
+			{ "id": 5, "name": "Pomelorockr85", "image": "Pomelorockr85.jpg" },
+			{ "id": 6, "name": "TimidaC", "image": "TimidaC.jpg" }
+		]
 	},
 	{
 		"id": 7,
-		"name": "Futbolero del año",
-		"description": "Se acredita a aquel que mas supo de futbol durante el año."
+		"name": "Streamer Vtuber",
+		"participants": [
+			{ "id": 1, "name": "KanonFlora", "image": "KanonFlora.jpg" },
+			{ "id": 2, "name": "LeoBoosted", "image": "LeoBoosted.jpg" },
+			{ "id": 3, "name": "sir_russel", "image": "sir_russel.jpg" },
+			{ "id": 4, "name": "starslight_24", "image": "starslight_24.jpg" },
+			{ "id": 5, "name": "Budin_Marmolado", "image": "Budin_Marmolado.jpg" },
+			{ "id": 6, "name": "Nadine_Von_Terror", "image": "Nadine_Von_Terror.jpg" }
+		]
 	},
 	{
 		"id": 8,
-		"name": "Estrellita del año",
-		"description": "Se acredita a aquel que mas trabajo costo para que vaya o haga alguna cosa."
+		"name": "Speedruner",
+		"participants": [
+			{ "id": 1, "name": "MattGael", "image": "MattGael.jpg" },
+			{ "id": 2, "name": "EsAndreas", "image": "EsAndreas.jpg" },
+			{ "id": 3, "name": "Missingtv", "image": "Missingtv.jpg" },
+			{ "id": 4, "name": "iiLanceLM", "image": "iiLanceLM.jpg" },
+			{ "id": 5, "name": "Asel_ga", "image": "Asel_ga.jpg" },
+			{ "id": 6, "name": "SonBeto", "image": "SonBeto.jpg" }
+		]
 	},
 	{
 		"id": 9,
-		"name": "Pollera del año",
-		"description": "Se acredita a aquel que amó muchísimo a la pareja y se olvidó de la banda."
+		"name": "Streamer de Terror",
+		"participants": [
+			{ "id": 1, "name": "Owarii1", "image": "Owarii1.jpg" },
+			{ "id": 2, "name": "Lu_madness", "image": "Lu_madness.jpg" },
+			{ "id": 3, "name": "Altoke", "image": "Altoke.jpg" },
+			{ "id": 4, "name": "Budin_Marmolado", "image": "Budin_Marmolado.jpg" },
+			{ "id": 5, "name": "Nadine_Von_Terror", "image": "Nadine_Von_Terror.jpg" },
+			{ "id": 6, "name": "Alexsteinnx", "image": "Alexsteinnx.jpg" }
+		]
 	},
 	{
 		"id": 10,
-		"name": "Gaga del año",
-		"description": "Se acredita a aquel que mas actitudes de viejo puto tuvo."
+		"name": "Streamer IRL",
+		"participants": [
+			{ "id": 1, "name": "Zafiro", "image": "Zafiro.jpg" },
+			{ "id": 2, "name": "Canvic", "image": "Canvic.jpg" },
+			{ "id": 3, "name": "Naninu", "image": "Naninu.jpg" },
+			{ "id": 4, "name": "Luchimichurri", "image": "Luchimichurri.jpg" },
+			{ "id": 5, "name": "Copic", "image": "Copic.jpg" },
+			{ "id": 6, "name": "TehLaw", "image": "TehLaw.jpg" }
+		]
 	},
 	{
 		"id": 11,
-		"name": "Bot del año",
-		"description": "Se acredita a aquel que mas comentarios de bot tuvo en el año."
-	},
-	{
-		"id": 12,
-		"name": "Desaparecido del año",
-		"description": "Se acredita a aquel que desapareció del grupo."
-	},
-	{
-		"id": 13,
-		"name": "Lolero del año",
-		"description": "Se acredita a aquel que mas league of legends jugó durante el año."
-	},
-	{
-		"id": 14,
-		"name": "Moño del año",
-		"description": "Se acredita a aquel que dijo la frase (buscar en el ts) mas regalada del año."
-	},
-	{
-		"id": 15,
-		"name": "GF del Año",
-		"description": "Se acredita al Goldfinch que mas se destacó durante el año. Siendo el mejor de los nuestros."
+		"name": "Caster",
+		"participants": [
+			{ "id": 1, "name": "Kronopia", "image": "Kronopia.jpg" },
+			{ "id": 2, "name": "Nunezknight", "image": "Nunezknight.jpg" },
+			{ "id": 3, "name": "Cerdicornii0", "image": "Cerdicornii0.jpg" },
+			{ "id": 4, "name": "LadyMufa", "image": "LadyMufa.jpg" }
+		]
 	}
 ]
