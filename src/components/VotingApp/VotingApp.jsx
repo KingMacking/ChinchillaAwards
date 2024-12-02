@@ -38,7 +38,7 @@ function VotingApp() {
 
 				const { data, error } = await supabase
 					.from(tableName)
-					.select("user_email")
+					.select("*")
 					.eq("user_email", user.email)
 					.maybeSingle();
 
