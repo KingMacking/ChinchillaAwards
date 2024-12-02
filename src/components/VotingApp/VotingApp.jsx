@@ -157,7 +157,7 @@ function VotingApp() {
 	}
 
 	return (
-		<main className='flex flex-col items-center h-full gap-6 py-12'>
+		<main className='flex flex-col items-start h-full gap-6 py-12'>
 			<button
 				onClick={() => setCurrentVoteType(null)}
 				className='self-start px-4 py-2 text-white bg-gray-700 rounded-md hover:bg-gray-600'
