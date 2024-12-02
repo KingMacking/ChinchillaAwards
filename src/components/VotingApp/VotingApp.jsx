@@ -45,7 +45,7 @@ function VotingApp() {
 			toast.success("Votos registrados con éxito.");
 			setTimeout(() => {
 				toast.info("¡Gracias por votar en los Chinchilla Awards!");
-			}, 1500);
+			}, 2000);
 
 			// Cerrar sesión del usuario después de votar
 			const { error: logoutError } = await supabase.auth.signOut();

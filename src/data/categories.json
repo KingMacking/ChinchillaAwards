@@ -2,6 +2,7 @@
 	{
 		"id": 1,
 		"name": "Valorant Player",
+		"videoUrl": "Fa5RtS61ng0",
 		"participants": [
 			{ "id": 1, "name": "MikamiNT", "image": "MikamiNT.jpg" },
 			{ "id": 2, "name": "OGTumba", "image": "OGTumba.jpg" },
@@ -14,6 +15,7 @@
 	{
 		"id": 2,
 		"name": "Apex Player",
+		"videoUrl": "4arrX-PrmvI",
 		"participants": [
 			{ "id": 1, "name": "FerVonLaiho", "image": "FerVonLaiho.jpg" },
 			{ "id": 2, "name": "Maruuhchan", "image": "Maruuhchan.jpg" },
@@ -26,6 +28,7 @@
 	{
 		"id": 3,
 		"name": "LoL Player",
+		"videoUrl": "yuyvqHyVf38",
 		"participants": [
 			{ "id": 1, "name": "xTHExNEAx", "image": "xTHExNEAx.jpg" },
 			{ "id": 2, "name": "LalyGerald", "image": "LalyGerald.jpg" },
@@ -38,6 +41,7 @@
 	{
 		"id": 4,
 		"name": "Overwatch Player",
+		"videoUrl": "_X-d_tbOWkY",
 		"participants": [
 			{ "id": 1, "name": "KanonFlora", "image": "KanonFlora.jpg" },
 			{ "id": 2, "name": "sGleen", "image": "sGleen.jpg" },
@@ -50,6 +54,7 @@
 	{
 		"id": 5,
 		"name": "CS Player",
+		"videoUrl": "LhVWt7Wv1wY",
 		"participants": [
 			{ "id": 1, "name": "TuteCu", "image": "TuteCu.jpg" },
 			{ "id": 2, "name": "AltairCreeds", "image": "AltairCreeds.jpg" },
@@ -60,6 +65,7 @@
 	{
 		"id": 6,
 		"name": "Streamer de variedad",
+		"videoUrl": "5u3Tmcw0o-E",
 		"participants": [
 			{ "id": 1, "name": "Tasher", "image": "Tasher.jpg" },
 			{ "id": 2, "name": "WichitaGames", "image": "WichitaGames.jpg" },
@@ -72,6 +78,7 @@
 	{
 		"id": 7,
 		"name": "Streamer Vtuber",
+		"videoUrl": "k_dltpoXhEQ",
 		"participants": [
 			{ "id": 1, "name": "KanonFlora", "image": "KanonFlora.jpg" },
 			{ "id": 2, "name": "LeoBoosted", "image": "LeoBoosted.jpg" },
@@ -84,6 +91,7 @@
 	{
 		"id": 8,
 		"name": "Speedruner",
+		"videoUrl": "Dy6bw1xjJJs",
 		"participants": [
 			{ "id": 1, "name": "MattGael", "image": "MattGael.jpg" },
 			{ "id": 2, "name": "EsAndreas", "image": "EsAndreas.jpg" },
@@ -96,6 +104,7 @@
 	{
 		"id": 9,
 		"name": "Streamer de Terror",
+		"videoUrl": "MkFh4lERwMs",
 		"participants": [
 			{ "id": 1, "name": "Owarii1", "image": "Owarii1.jpg" },
 			{ "id": 2, "name": "Lu_madness", "image": "Lu_madness.jpg" },
@@ -108,18 +117,20 @@
 	{
 		"id": 10,
 		"name": "Streamer IRL",
+		"videoUrl": "8z-pJqoAU9A",
 		"participants": [
 			{ "id": 1, "name": "Zafiro", "image": "Zafiro.jpg" },
 			{ "id": 2, "name": "Canvic", "image": "Canvic.jpg" },
 			{ "id": 3, "name": "Naninu", "image": "Naninu.jpg" },
 			{ "id": 4, "name": "Luchimichurri", "image": "Luchimichurri.jpg" },
-			{ "id": 5, "name": "Copic", "image": "Copic.jpg" },
-			{ "id": 6, "name": "TehLaw", "image": "TehLaw.jpg" }
+			{ "id": 5, "name": "Elymos", "image": "Elymos.jpg" },
+			{ "id": 6, "name": "Budin_marmolado", "image": "Budin_marmolado.jpg" }
 		]
 	},
 	{
 		"id": 11,
 		"name": "Caster",
+		"videoUrl": "qefILGG0LaM",
 		"participants": [
 			{ "id": 1, "name": "Kronopia", "image": "Kronopia.jpg" },
 			{ "id": 2, "name": "Nunezknight", "image": "Nunezknight.jpg" },
@@ -128,3 +139,4 @@
 		]
 	}
 ]
+

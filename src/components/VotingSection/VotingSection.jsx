@@ -49,9 +49,8 @@ function VotingSection({ categories, onVotesSubmit, handleLogout }) {
 
 			{/* Video */}
 			<iframe
-				src='https://www.youtube.com/embed/2UsXEsJzOu8/'
-				frameBorder='0'
-				className='w-full h-[450px] rounded-lg'
+				src={`https://www.youtube.com/embed/${currentCategory.videoUrl}`}
+				className='w-full rounded-lg aspect-video'
 				allowFullScreen
 			></iframe>
 
