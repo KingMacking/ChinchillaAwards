@@ -21,7 +21,7 @@ function LoginScreen() {
 	};
 
 	return (
-		<div className='flex flex-col items-center justify-center w-full h-full'>
+		<div className='flex flex-col items-center justify-center w-svw h-svh'>
 			<div className='bg-[#000816] bg-opacity-50 rounded-lg h-auto p-8 shadow-md backdrop-blur-md max-w-sm text-center'>
 				<img src='/assets/thechinchillaawardslogo.png' alt='Logo' className='mb-10' />
 				<p className='mb-6 text-white'>
