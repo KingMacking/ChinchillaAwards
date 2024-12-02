@@ -56,7 +56,7 @@ function LoginScreen() {
 				<img src='/assets/thechinchillaawardslogo.png' alt='Logo' className='mb-4' />
 
 				{/* Contador */}
-				<p className='mb-6 font-semibold text-white text-8xl'>
+				<p className='p-5 mb-6 font-semibold text-white border border-white rounded-md text-8xl'>
 					{timeLeft}
 				</p>
 
