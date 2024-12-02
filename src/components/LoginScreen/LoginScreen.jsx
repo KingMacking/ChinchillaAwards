@@ -4,7 +4,7 @@ import { toast } from "sonner";
 
 function LoginScreen() {
 	// Estado para el tiempo restante
-	const [timeLeft, setTimeLeft] = useState("");
+	const [timeLeft, setTimeLeft] = useState("00 : 00 : 00 : 00");
 
 	// Configurar la fecha del evento (14 de diciembre a las 17hs)
 	const eventDate = new Date("2024-12-14T17:00:00-03:00"); // Hora de Argentina (UTC-3)
