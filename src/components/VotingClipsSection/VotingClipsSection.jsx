@@ -65,9 +65,7 @@ function VotingClipsSection({ categories, onVotesSubmit, handleLogout }) {
 							key={participant.id}
 							onClick={() => handleVoteChange(participant.id)}
 							className={`cursor-pointer p-4 text-lg font-semibold border rounded-lg transition-all duration-300 ${
-								isSelected
-									? "bg-primary text-black"
-									: "bg-transparent text-white"
+								isSelected ? "bg-primary text-black" : "bg-transparent text-white"
 							}`}
 						>
 							{participant.name}
@@ -77,7 +75,19 @@ function VotingClipsSection({ categories, onVotesSubmit, handleLogout }) {
 			</div>
 
 			{/* Navegación */}
-			<div className='flex justify-between mt-8 space-x-4'>
+			<div className='flex items-center gap-2 mt-8 space-x-4'>
+				<button
+					onClick={goBack}
+					className='px-4 py-2 font-semibold text-white rounded-lg bg-secondary'
+				>
+					Atras
+				</button>
+				<button
+					className='px-4 py-2 font-semibold text-white rounded-lg bg-secondary'
+					onClick={handleLogout}
+				>
+					Logout
+				</button>
 				{currentCategoryIndex !== 0 && (
 					<button
 						onClick={handlePrevCategory}
@@ -86,6 +96,7 @@ function VotingClipsSection({ categories, onVotesSubmit, handleLogout }) {
 						Anterior categoría
 					</button>
 				)}
+
 				<button
 					onClick={handleNextCategory}
 					className='px-6 py-3 ml-auto font-semibold text-black rounded-lg bg-primary'
@@ -93,12 +104,6 @@ function VotingClipsSection({ categories, onVotesSubmit, handleLogout }) {
 					{currentCategoryIndex < categories.length - 1
 						? "Siguiente categoría"
 						: "Enviar votos"}
-				</button>
-				<button
-					className='px-4 py-2 font-semibold text-white rounded-lg bg-secondary'
-					onClick={handleLogout}
-				>
-					Logout
 				</button>
 			</div>
 		</div>

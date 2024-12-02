@@ -88,6 +88,12 @@ function VotingCategoriesSection({ categories, onVotesSubmit, handleLogout, goBa
 				>
 					Atras
 				</button>
+				<button
+					className='px-4 py-2 font-semibold text-white rounded-lg bg-secondary'
+					onClick={handleLogout}
+				>
+					Logout
+				</button>
 				{currentCategoryIndex !== 0 && (
 					<button
 						onClick={handlePrevCategory}
@@ -105,12 +111,7 @@ function VotingCategoriesSection({ categories, onVotesSubmit, handleLogout, goBa
 						? "Siguiente categoría"
 						: "Enviar votos"}
 				</button>
-				<button
-					className='px-4 py-2 font-semibold text-white rounded-lg bg-secondary'
-					onClick={handleLogout}
-				>
-					Logout
-				</button>
+				
 			</div>
 		</div>
 	);

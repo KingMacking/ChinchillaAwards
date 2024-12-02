@@ -113,7 +113,7 @@ function VotingApp() {
 
 	if (!currentVoteType) {
 		return (
-			<main className='flex flex-col items-center justify-center h-screen gap-8 p-4 text-center'>
+			<main className='flex flex-col items-center justify-center h-screen gap-8 p-4 text-center bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 				<h1 className='text-4xl font-bold text-primary'>
 					¡Bienvenido a los Chinchilla Awards!
 				</h1>
@@ -144,7 +144,7 @@ function VotingApp() {
 
 	if (hasVoted) {
 		return (
-			<main className='flex flex-col items-center justify-center h-screen p-4 text-center'>
+			<main className='flex flex-col items-center justify-center h-screen p-4 text-center bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 				<h1 className='text-4xl font-bold text-primary'>¡Ya votaste en esta sección!</h1>
 				<p className='text-lg text-white'>
 					Gracias por participar en los Chinchilla Awards.
@@ -160,7 +160,7 @@ function VotingApp() {
 	}
 
 	return (
-		<main className='flex flex-col items-start h-auto gap-6 py-12'>
+		<main className='flex flex-col items-start h-auto gap-6 py-12 '>
 			{currentVoteType === "categories" && (
 				<VotingCategoriesSection
 					categories={CATEGORIES}
