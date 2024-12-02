@@ -33,7 +33,8 @@ function VotingApp() {
 				toast.error("Error al verificar los votos. Intenta nuevamente.");
 				return;
 			}
-	
+			console.log(existingVotes);
+			
 			if (existingVotes.length > 0 && existingVotes[0].user_votes?.length > 0) {
 				// Si ya existen votos registrados en el array, mostrar una alerta y no permitir votar
 				toast.error("Este email ya ha registrado votos. No puedes votar nuevamente.");
