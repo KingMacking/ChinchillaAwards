@@ -1,62 +1,22 @@
-import { useState } from "react";
 import { supabase } from "../../supabaseClient";
 import { toast } from "sonner";
 
 function LoginScreen() {
-	const [loading, setLoading] = useState(false); // Para manejar el estado de carga
-
 	// Función para manejar el login con Google
 	const handleGoogleLogin = async () => {
-		setLoading(true);
 		try {
-			// Iniciar sesión con Google
-			const { data: signInData, error: signInError } = await supabase.auth.signInWithOAuth({
-				provider: "google",
-				options: {
-					redirectTo: "http://thechinchillaawards.netlify.app",
-				},
-			});
-
-			if (signInError) {
+			const { error } = await supabase.auth
+				.signInWithOAuth({
+					provider: "google",
+					options: {
+						redirectTo: "http://thechinchillaawards.netlify.app",
+					},
+				})
+			if (error) {
 				toast.error("Error al iniciar sesión con Google.");
-				setLoading(false);
-				return;
 			}
-
-			// Esperar a que el usuario esté autenticado
-			const { data: sessionData } = await supabase.auth.getSession();
-			const userEmail = sessionData?.session?.user?.email;
-
-			if (!userEmail) {
-				toast.error("No se pudo obtener el email del usuario.");
-				setLoading(false);
-				return;
-			}
-
-			// Verificar si el email ya tiene votos registrados
-			const { data: votes, error: votesError } = await supabase
-				.from("chinchilla-awards-votes-test")
-				.select("id")
-				.eq("user_email", userEmail);
-
-			if (votesError) {
-				toast.error("Error al verificar los votos.");
-				setLoading(false);
-				return;
-			}
-
-			if (votes.length > 0) {
-				toast.error("Este email ya ha registrado votos.");
-				setLoading(false);
-				return;
-			}
-
-			// Si todo está bien
-			toast.success("Sesión iniciada correctamente, ya puedes votar.");
 		} catch (error) {
 			toast.error("Algo salió mal. Por favor, intente nuevamente.");
-		} finally {
-			setLoading(false);
 		}
 	};
 
@@ -70,12 +30,9 @@ function LoginScreen() {
 
 				<button
 					onClick={handleGoogleLogin}
-					className={`w-full p-3 font-medium text-black transition-all rounded-md ${
-						loading ? "bg-gray-400" : "bg-primary hover:bg-secondary"
-					} focus:outline-none focus:ring-2 focus:ring-secondary`}
-					disabled={loading}
+					className='w-full p-3 font-medium text-black transition-all rounded-md bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-secondary'
 				>
-					{loading ? "Validando..." : "Iniciar sesión con Google"}
+					Iniciar sesión con Google
 				</button>
 			</div>
 		</div>
