@@ -30,26 +30,22 @@ function VotingApp() {
 			if (!currentVoteType) return;
 
 			setLoading(true);
-			
+
 			try {
 				const tableName =
 					currentVoteType === "categories"
 						? "chinchilla-awards-votes-test"
 						: "chinchilla-awards-votes-clips";
 
-				const { data, error } = await supabase
-					.from(tableName)
-					.select("*")
-					.eq("user_email", user.email)
+				const { data, error } = await supabase.from(tableName).select("*");
 
-					console.log(data, error);
-					
+				console.log(data, error);
 
 				if (error && error.code !== "PGRST116") {
 					throw error;
 				}
 				console.log(data);
-				
+
 				if (data && data.length > 0) {
 					setHasVoted(true); // Usuario ya votó
 				} else {
@@ -150,7 +146,9 @@ function VotingApp() {
 		return (
 			<main className='flex flex-col items-center justify-center h-screen p-4 text-center'>
 				<h1 className='text-4xl font-bold text-primary'>¡Ya votaste en esta sección!</h1>
-				<p className='text-lg text-white'>Gracias por participar en los Chinchilla Awards.</p>
+				<p className='text-lg text-white'>
+					Gracias por participar en los Chinchilla Awards.
+				</p>
 				<button
 					onClick={() => setCurrentVoteType(null)}
 					className='px-6 py-3 mt-4 text-lg font-semibold text-black rounded-lg bg-primary hover:bg-opacity-80'
