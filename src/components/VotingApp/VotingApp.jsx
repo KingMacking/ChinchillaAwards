@@ -91,19 +91,27 @@ function VotingApp() {
 					"Error al cerrar sesión después de votar. Por favor, intenta nuevamente."
 				);
 			}
-			setUser(null);
+			setCurrentVoteType(null);
 		} catch (error) {
 			toast.error("Ocurrió un error inesperado. Por favor, intenta nuevamente.");
 		}
 	};
 
 	const handleLogout = async () => {
-		const { error } = await supabase.auth.signOut();
-		if (error) {
-			toast.error("Error al cerrar sesión: " + error.message);
-		} else {
+		try {
+			// Cerrar sesión en Supabase
+			const { error } = await supabase.auth.signOut();
+
+			if (error) {
+				throw new Error(error.message); // Si hay error, lanzamos la excepción
+			}
+
+			// Mostrar mensaje de éxito
 			toast.success("Sesión cerrada correctamente.");
-			setUser(null);
+		} catch (error) {
+			// Manejo de errores si ocurre un fallo en el proceso
+			console.error("Error al cerrar sesión:", error);
+			toast.error("Error al cerrar sesión: " + error.message);
 		}
 	};
 
@@ -132,6 +140,12 @@ function VotingApp() {
 						className='px-6 py-3 text-lg font-semibold text-white rounded-lg bg-secondary hover:bg-opacity-80'
 					>
 						Votar por Clips
+					</button>
+					<button
+						onClick={handleLogout}
+						className='px-6 py-3 text-lg font-semibold text-white rounded-lg bg-secondary hover:bg-opacity-80'
+					>
+						Cerrar sesión
 					</button>
 				</div>
 			</main>
