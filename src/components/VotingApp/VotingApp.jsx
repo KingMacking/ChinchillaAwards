@@ -5,6 +5,7 @@ import LoginScreen from "../LoginScreen/LoginScreen";
 import VotingCategoriesSection from "../VotingCategoriesSection/VotingCategoriesSection";
 import VotingClipsSection from "../VotingClipsSection/VotingClipsSection";
 import CATEGORIES from "../../data/categories.json";
+import CATEGORIES_CLIPS from "../../data/clipsCategories.json";
 
 function VotingApp() {
 	const [user, setUser] = useState(null);
@@ -179,7 +180,7 @@ function VotingApp() {
 			)}
 			{currentVoteType === "clips" && (
 				<VotingClipsSection
-					categories={CATEGORIES} // Reemplaza con los datos de los clips
+					categories={CATEGORIES_CLIPS} // Reemplaza con los datos de los clips
 					onVotesSubmit={handleVote}
 					handleLogout={handleLogout}
 					goBack={() => setCurrentVoteType(null)}

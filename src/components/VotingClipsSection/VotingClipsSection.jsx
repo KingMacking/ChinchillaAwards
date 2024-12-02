@@ -68,7 +68,7 @@ function VotingClipsSection({ categories, onVotesSubmit, handleLogout, goBack })
 								isSelected ? "bg-primary text-black" : "bg-transparent text-white"
 							}`}
 						>
-							{participant.name}
+							{participant.clipName} - {participant.authorName}
 						</div>
 					);
 				})}

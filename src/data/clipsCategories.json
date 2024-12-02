@@ -1,0 +1,98 @@
+[
+	{
+		"id": 1,
+		"name": "Mas Cringe",
+		"videoUrl": "zfLgLVvyylI",
+		"participants": [
+			{ "id": 1, "clipName": "hago la de shrek", "authorName": "Nexusnib" },
+			{ "id": 2, "clipName": "todos juegos los rotos de zelda", "authorName": "Nexus_nib" },
+			{ "id": 3, "clipName": "onda onda ondaaau", "authorName": "Nightray_97" },
+			{ "id": 4, "clipName": "PERO KE RIKOOO", "authorName": "Nightray_97" },
+			{ "id": 5, "clipName": "se le sale la avellana", "authorName": "Nightray_97" }
+		]
+	},
+	{
+		"id": 2,
+		"name": "Mejor Timing",
+		"videoUrl": "5GX15808POM",
+		"participants": [
+			{ "id": 1, "clipName": "Noot noot Literature Club", "authorName": "Vetron" },
+			{ "id": 2, "clipName": "Pedile perdón dale!", "authorName": "DemianKidd" },
+			{ "id": 3, "clipName": "ANOMALIA DE SOMBRA REAL", "authorName": "Kuruh" },
+			{ "id": 4, "clipName": "Yo no le tengo miedo a nada", "authorName": "Lennoxasdasd" },
+			{ "id": 5, "clipName": "Un copado el coil head", "authorName": "TaroLRPM" }
+		]
+	},
+	{
+		"id": 3,
+		"name": "Más Divertido",
+		"videoUrl": "V5MsrXCiAvA",
+		"participants": [
+			{ "id": 1, "clipName": "alerta de jumpscare", "authorName": "Nexus_nib" },
+			{ "id": 2, "clipName": "Les explotó hasta el or", "authorName": "Nadine_Von_Terror" },
+			{ "id": 3, "clipName": "Siguiente categoría:", "authorName": "LeMaple" },
+			{ "id": 4, "clipName": "el narrador de cuentos", "authorName": "TaroLRPM" },
+			{ "id": 5, "clipName": "el trato más gentil de gallardd", "authorName": "TaroLRPM" }
+		]
+	},
+	{
+		"id": 4,
+		"name": "Out of Context",
+		"videoUrl": "Za30Z71ydvk",
+		"participants": [
+			{ "id": 1, "clipName": "Taro OOC", "authorName": "Lennoxasdasd" },
+			{
+				"id": 2,
+				"clipName": "Gallardd OOC: El bicho succiona la cabeza",
+				"authorName": "Maruuhchan"
+			},
+			{ "id": 3, "clipName": "Macritas", "authorName": "Nightray_97" },
+			{
+				"id": 4,
+				"clipName": "Huevo que veo, huevo que quiero entrarle",
+				"authorName": "Maruuhchan"
+			},
+			{ "id": 5, "clipName": "iiiiiiiiii", "authorName": "TaroLRPM" }
+		]
+	},
+	{
+		"id": 5,
+		"name": "Mejor Susto",
+		"videoUrl": "GvOgotpVRSk",
+		"participants": [
+			{ "id": 1, "clipName": "otaku toca agua y muere del susto", "authorName": "DanteM45" },
+			{ "id": 2, "clipName": "S u r p r i s e", "authorName": "Vetron" },
+			{ "id": 3, "clipName": "Sustitooo", "authorName": "Paic" },
+			{ "id": 4, "clipName": "panik", "authorName": "DanteM45" },
+			{ "id": 5, "clipName": "A donde crees que vas?", "authorName": "SpKrashek" }
+		]
+	},
+	{
+		"id": 6,
+		"name": "El Mas Manco",
+		"videoUrl": "jbCirwtXwTw",
+		"participants": [
+			{ "id": 1, "clipName": "1v4 montage", "authorName": "f9rsaken" },
+			{
+				"id": 2,
+				"clipName": "hay que cerrar el estadio, los genios hacen eso",
+				"authorName": "Nexus_nib"
+			},
+			{ "id": 3, "clipName": "es el sueño", "authorName": "Nexus_nib" },
+			{ "id": 4, "clipName": "morirse cayendose?", "authorName": "Nexus_nib" },
+			{ "id": 5, "clipName": "Nooo sus tiros Q_Q", "authorName": "Nightray_97" }
+		]
+	},
+	{
+		"id": 7,
+		"name": "Play del Año",
+		"videoUrl": "Ys6U_xakN2Y",
+		"participants": [
+			{ "id": 1, "clipName": "exotic pixel", "authorName": "Nexus_nib" },
+			{ "id": 2, "clipName": "no tiene manos xd", "authorName": "tatOkhz" },
+			{ "id": 3, "clipName": "Farmeados por Gullurdd", "authorName": "Maruuhchan" },
+			{ "id": 4, "clipName": "60 sec al filo", "authorName": "fpsjulf" },
+			{ "id": 5, "clipName": "julf, clipeamelo", "authorName": "fpsjulf" }
+		]
+	}
+]
