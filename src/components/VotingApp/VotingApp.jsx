@@ -33,7 +33,7 @@ function VotingApp() {
 			try {
 				const tableName =
 					currentVoteType === "categories"
-						? "chinchilla-awards-votes-categories"
+						? "chinchilla-awards-votes-test"
 						: "chinchilla-awards-votes-clips";
 
 				const { data, error } = await supabase
@@ -55,14 +55,14 @@ function VotingApp() {
 		};
 
 		checkIfVoted();
-	}, [user, currentVoteType]);
+	}, [currentVoteType]);
 
 	// Función para registrar los votos
 	const handleVote = async (votes) => {
 		try {
 			const tableName =
 				currentVoteType === "categories"
-					? "chinchilla-awards-votes-categories"
+					? "chinchilla-awards-votes-test"
 					: "chinchilla-awards-votes-clips";
 
 			const { error: voteError } = await supabase
