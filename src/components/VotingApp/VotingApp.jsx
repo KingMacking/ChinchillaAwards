@@ -40,7 +40,7 @@ function VotingApp() {
 					.from(tableName)
 					.select("user_email")
 					.eq("user_email", user.email)
-					.single();
+					.maybeSingle();
 
 					console.log(data, error);
 					
