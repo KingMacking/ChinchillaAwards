@@ -30,7 +30,6 @@ function VotingApp() {
 			if (!currentVoteType) return;
 
 			setLoading(true);
-			console.log("llega a cargar");
 			
 			try {
 				const tableName =
@@ -42,7 +41,6 @@ function VotingApp() {
 					.from(tableName)
 					.select("*")
 					.eq("user_email", user.email)
-					.maybeSingle();
 
 					console.log(data, error);
 					
@@ -52,7 +50,11 @@ function VotingApp() {
 				}
 				console.log(data);
 				
-				setHasVoted(!!data);
+				if (data && data.length > 0) {
+					setHasVoted(true); // Usuario ya votó
+				} else {
+					setHasVoted(false); // Usuario no ha votado
+				}
 			} catch (error) {
 				toast.error("Error verificando los votos. Por favor, intenta nuevamente.");
 			} finally {
@@ -160,7 +162,7 @@ function VotingApp() {
 	}
 
 	return (
-		<main className='flex flex-col items-start h-auto gap-6 py-12 my-10'>
+		<main className='flex flex-col items-start h-auto gap-6 py-12'>
 			<button
 				onClick={() => setCurrentVoteType(null)}
 				className='self-start px-4 py-2 text-white bg-gray-700 rounded-md hover:bg-gray-600'
