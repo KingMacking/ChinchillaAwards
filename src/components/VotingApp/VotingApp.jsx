@@ -84,7 +84,6 @@ function VotingApp() {
 			}
 
 			toast.success("Votos registrados con éxito.");
-			setHasVoted(true);
 
 			setCurrentVoteType(null);
 		} catch (error) {
