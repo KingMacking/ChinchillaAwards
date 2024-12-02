@@ -28,33 +28,33 @@ function VotingApp() {
 				.from("chinchilla-awards-votes-test")
 				.select("user_votes")
 				.eq("user_email", user.email);
-
+	
 			if (checkError) {
 				toast.error("Error al verificar los votos. Intenta nuevamente.");
 				return;
 			}
-
-			if (existingVotes.length > 0) {
-				// Si ya existen votos con este email, mostrar una alerta y no permitir enviar los votos
+	
+			if (existingVotes.length > 0 && existingVotes[0].user_votes?.length > 0) {
+				// Si ya existen votos registrados en el array, mostrar una alerta y no permitir votar
 				toast.error("Este email ya ha registrado votos. No puedes votar nuevamente.");
 				return;
 			}
-
+	
 			// Registrar los votos en la base de datos
 			const { error: voteError } = await supabase
 				.from("chinchilla-awards-votes-test")
 				.insert([{ user_email: user.email, user_votes: votes }]);
-
+	
 			if (voteError) {
 				toast.error("Error al registrar los votos. Intenta nuevamente.");
 				return;
 			}
-
+	
 			toast.success("Votos registrados con éxito.");
 			setTimeout(() => {
 				toast.info("¡Gracias por votar en los Chinchilla Awards!");
 			}, 1500);
-
+	
 			// Opcional: cerrar sesión después de votar
 			setUser(null);
 		} catch (error) {
