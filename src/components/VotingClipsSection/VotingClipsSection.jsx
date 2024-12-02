@@ -67,7 +67,7 @@ function VotingClipsSection({ categories, onVotesSubmit, handleLogout }) {
 							className={`cursor-pointer p-4 text-lg font-semibold border rounded-lg transition-all duration-300 ${
 								isSelected
 									? "bg-primary text-black"
-									: "bg-secondary text-white hover:bg-opacity-80"
+									: "bg-transparent text-white"
 							}`}
 						>
 							{participant.name}

@@ -43,13 +43,7 @@ function VotingCategoriesSection({ categories, onVotesSubmit, handleLogout, goBa
 	return (
 		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 			{/* Título */}
-			<h2 className='flex items-center justify-between mb-8 text-6xl font-bold text-center uppercase text-primary'>
-				<button
-					onClick={goBack}
-					className='px-4 py-2 font-semibold text-white rounded-lg bg-secondary'
-				>
-					Atras
-				</button>
+			<h2 className='mb-8 text-6xl font-bold text-center uppercase text-primary'>
 				{currentCategory.name}
 			</h2>
 
@@ -87,7 +81,13 @@ function VotingCategoriesSection({ categories, onVotesSubmit, handleLogout, goBa
 			</div>
 
 			{/* Navegación */}
-			<div className='flex justify-between mt-8 space-x-4'>
+			<div className='flex items-center gap-2 mt-8 space-x-4'>
+				<button
+					onClick={goBack}
+					className='px-4 py-2 font-semibold text-white rounded-lg bg-secondary'
+				>
+					Atras
+				</button>
 				{currentCategoryIndex !== 0 && (
 					<button
 						onClick={handlePrevCategory}
@@ -96,6 +96,7 @@ function VotingCategoriesSection({ categories, onVotesSubmit, handleLogout, goBa
 						Anterior categoría
 					</button>
 				)}
+
 				<button
 					onClick={handleNextCategory}
 					className='px-6 py-3 ml-auto font-semibold text-black rounded-lg bg-primary'
