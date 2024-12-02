@@ -35,7 +35,7 @@ function VotingApp() {
 				const tableName =
 					currentVoteType === "categories"
 						? "chinchilla-awards-votes-test"
-						: "chinchilla-awards-votes-clips";
+						: "chinchilla-awards-votes-clips-test";
 
 				const { data, error } = await supabase.from(tableName).select("*");
 
@@ -85,12 +85,6 @@ function VotingApp() {
 			toast.success("Votos registrados con éxito.");
 			setHasVoted(true);
 
-			const { error: logoutError } = await supabase.auth.signOut();
-			if (logoutError) {
-				toast.error(
-					"Error al cerrar sesión después de votar. Por favor, intenta nuevamente."
-				);
-			}
 			setCurrentVoteType(null);
 		} catch (error) {
 			toast.error("Ocurrió un error inesperado. Por favor, intenta nuevamente.");
@@ -133,17 +127,17 @@ function VotingApp() {
 						onClick={() => setCurrentVoteType("categories")}
 						className='px-6 py-3 text-lg font-semibold text-black rounded-lg bg-primary hover:bg-opacity-80'
 					>
-						Votar por Categorías
+						Votar categorías streamers
 					</button>
 					<button
 						onClick={() => setCurrentVoteType("clips")}
 						className='px-6 py-3 text-lg font-semibold text-white rounded-lg bg-secondary hover:bg-opacity-80'
 					>
-						Votar por Clips
+						Votar clips of the year
 					</button>
 					<button
 						onClick={handleLogout}
-						className='px-6 py-3 text-lg font-semibold text-white rounded-lg bg-secondary hover:bg-opacity-80'
+						className='px-6 py-3 text-lg font-semibold text-white border rounded-lg border-secondary hover:bg-opacity-80'
 					>
 						Cerrar sesión
 					</button>
