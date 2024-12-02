@@ -30,6 +30,8 @@ function VotingApp() {
 			if (!currentVoteType) return;
 
 			setLoading(true);
+			console.log("llega a cargar");
+			
 			try {
 				const tableName =
 					currentVoteType === "categories"
@@ -48,7 +50,8 @@ function VotingApp() {
 				if (error && error.code !== "PGRST116") {
 					throw error;
 				}
-
+				console.log(data);
+				
 				setHasVoted(!!data);
 			} catch (error) {
 				toast.error("Error verificando los votos. Por favor, intenta nuevamente.");
@@ -157,7 +160,7 @@ function VotingApp() {
 	}
 
 	return (
-		<main className='flex flex-col items-start h-full gap-6 py-12'>
+		<main className='flex flex-col items-start h-auto gap-6 py-12 my-10'>
 			<button
 				onClick={() => setCurrentVoteType(null)}
 				className='self-start px-4 py-2 text-white bg-gray-700 rounded-md hover:bg-gray-600'

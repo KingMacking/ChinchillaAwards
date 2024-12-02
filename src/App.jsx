@@ -4,7 +4,7 @@ import VotingApp from "./components/VotingApp/VotingApp";
 
 function App() {
 	return (
-		<main className="bg-main h-svh w-svw">
+		<main className="bg-main min-h-svh min-w-svw">
 			<Toaster position='top-center' richColors />
 			<VotingApp />
 		</main>
