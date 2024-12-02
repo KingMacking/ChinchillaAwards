@@ -67,7 +67,7 @@ function VotingApp() {
 			const tableName =
 				currentVoteType === "categories"
 					? "chinchilla-awards-votes-test"
-					: "chinchilla-awards-votes-clips";
+					: "chinchilla-awards-votes-clips-test";
 
 			const { error: voteError } = await supabase
 				.from(tableName)
