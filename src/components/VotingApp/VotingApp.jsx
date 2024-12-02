@@ -8,6 +8,10 @@ import CATEGORIES from "../../data/categories.json";
 function VotingApp() {
 	const [user, setUser] = useState(null); // Estado del usuario
 	const [hasVoted, setHasVoted] = useState(false); // Estado para verificar si ya votó
+	console.log(user);
+	console.log(hasVoted);
+	
+	
 
 	// Verificar si el usuario ya está autenticado y validar votos
 	useEffect(() => {
@@ -29,6 +33,8 @@ function VotingApp() {
 					.from("chinchilla-awards-votes-test")
 					.select("id")
 					.eq("user_email", user.email);
+				console.log(votes);
+				
 
 				if (votesError) {
 					toast.error("Error al verificar los votos del usuario.");
