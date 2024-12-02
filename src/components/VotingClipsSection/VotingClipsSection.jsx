@@ -75,7 +75,7 @@ function VotingClipsSection({ categories, onVotesSubmit, handleLogout }) {
 			</div>
 
 			{/* Navegación */}
-			<div className='flex items-center gap-2 mt-8 space-x-4'>
+			<div className='flex items-center gap-2 mt-8'>
 				<button
 					onClick={goBack}
 					className='px-6 py-3 font-semibold text-white rounded-lg bg-secondary'
