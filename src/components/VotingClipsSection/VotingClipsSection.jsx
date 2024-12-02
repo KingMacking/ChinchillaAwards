@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "sonner";
 
-function VotingSection({ categories, onVotesSubmit, handleLogout }) {
+function VotingClipsSection({ categories, onVotesSubmit, handleLogout }) {
 	const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
 	const [votes, setVotes] = useState(
 		categories.map((category) => ({
@@ -26,7 +26,7 @@ function VotingSection({ categories, onVotesSubmit, handleLogout }) {
 	const handleNextCategory = () => {
 		const currentVote = votes[currentCategoryIndex];
 		if (currentVote.selectedParticipant === "") {
-			toast.info("Debes seleccionar un participante antes de continuar.");
+			toast.info("Debes seleccionar una opción antes de continuar.");
 		} else {
 			if (currentCategoryIndex < categories.length - 1) {
 				setCurrentCategoryIndex(currentCategoryIndex + 1);
@@ -54,8 +54,8 @@ function VotingSection({ categories, onVotesSubmit, handleLogout }) {
 				allowFullScreen
 			></iframe>
 
-			{/* Participantes */}
-			<div className='grid grid-cols-3 gap-4 mt-8'>
+			{/* Lista de participantes */}
+			<div className='mt-8 space-y-4'>
 				{participants.map((participant) => {
 					const isSelected =
 						votes[currentCategoryIndex].selectedParticipant === participant.id;
@@ -64,17 +64,13 @@ function VotingSection({ categories, onVotesSubmit, handleLogout }) {
 						<div
 							key={participant.id}
 							onClick={() => handleVoteChange(participant.id)}
-							className={`relative cursor-pointer transition-all duration-300 ${
+							className={`cursor-pointer p-4 text-lg font-semibold border rounded-lg transition-all duration-300 ${
 								isSelected
-									? "transform -translate-y-2 opacity-100 grayscale-0"
-									: "opacity-50 hover:opacity-100 grayscale hover:grayscale-0"
+									? "bg-primary text-black"
+									: "bg-secondary text-white hover:bg-opacity-80"
 							}`}
 						>
-							<img
-								src={`/assets/participants-pictures/${participant.image}`}
-								alt={participant.name}
-								className='object-cover w-full h-full rounded-lg'
-							/>
+							{participant.name}
 						</div>
 					);
 				})}
@@ -109,4 +105,4 @@ function VotingSection({ categories, onVotesSubmit, handleLogout }) {
 	);
 }
 
-export default VotingSection;
+export default VotingClipsSection;
