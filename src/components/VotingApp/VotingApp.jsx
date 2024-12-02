@@ -129,7 +129,7 @@ function VotingApp() {
 					</button>
 					<button
 						onClick={() => setCurrentVoteType("clips")}
-						className='px-6 py-3 text-lg font-semibold text-black rounded-lg bg-secondary hover:bg-opacity-80'
+						className='px-6 py-3 text-lg font-semibold text-white rounded-lg bg-secondary hover:bg-opacity-80'
 					>
 						Votar por Clips
 					</button>

@@ -84,12 +84,12 @@ function VotingCategoriesSection({ categories, onVotesSubmit, handleLogout, goBa
 			<div className='flex items-center gap-2 mt-8 space-x-4'>
 				<button
 					onClick={goBack}
-					className='px-4 py-2 font-semibold text-white rounded-lg bg-secondary'
+					className='px-6 py-3 font-semibold text-white rounded-lg bg-secondary'
 				>
 					Atras
 				</button>
 				<button
-					className='px-4 py-2 font-semibold text-white rounded-lg bg-secondary'
+					className='px-6 py-3 font-semibold text-white rounded-lg bg-secondary'
 					onClick={handleLogout}
 				>
 					Logout
@@ -97,7 +97,7 @@ function VotingCategoriesSection({ categories, onVotesSubmit, handleLogout, goBa
 				{currentCategoryIndex !== 0 && (
 					<button
 						onClick={handlePrevCategory}
-						className='px-4 py-2 font-semibold text-white rounded-lg bg-secondary'
+						className='px-6 py-3 font-semibold text-white rounded-lg bg-secondary'
 					>
 						Anterior categoría
 					</button>
