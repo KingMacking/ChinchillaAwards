@@ -27,7 +27,7 @@ function VotingApp() {
 	// Verificar si el usuario ya votó
 	useEffect(() => {
 		const checkIfVoted = async () => {
-			if (!user || !currentVoteType) return;
+			if (!currentVoteType) return;
 
 			setLoading(true);
 			try {
@@ -41,6 +41,9 @@ function VotingApp() {
 					.select("user_email")
 					.eq("user_email", user.email)
 					.single();
+
+					console.log(data, error);
+					
 
 				if (error && error.code !== "PGRST116") {
 					throw error;
