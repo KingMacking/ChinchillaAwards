@@ -161,17 +161,12 @@ function VotingApp() {
 
 	return (
 		<main className='flex flex-col items-start h-auto gap-6 py-12'>
-			<button
-				onClick={() => setCurrentVoteType(null)}
-				className='self-start px-4 py-2 text-white bg-gray-700 rounded-md hover:bg-gray-600'
-			>
-				← Volver
-			</button>
 			{currentVoteType === "categories" && (
 				<VotingCategoriesSection
 					categories={CATEGORIES}
 					onVotesSubmit={handleVote}
 					handleLogout={handleLogout}
+					goBack={() => setCurrentVoteType(null)}
 				/>
 			)}
 			{currentVoteType === "clips" && (
@@ -179,6 +174,7 @@ function VotingApp() {
 					categories={CATEGORIES} // Reemplaza con los datos de los clips
 					onVotesSubmit={handleVote}
 					handleLogout={handleLogout}
+					goBack={() => setCurrentVoteType(null)}
 				/>
 			)}
 		</main>

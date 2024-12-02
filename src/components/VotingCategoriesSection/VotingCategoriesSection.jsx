@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "sonner";
 
-function VotingCategoriesSection({ categories, onVotesSubmit, handleLogout }) {
+function VotingCategoriesSection({ categories, onVotesSubmit, handleLogout, goBack }) {
 	const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
 	const [votes, setVotes] = useState(
 		categories.map((category) => ({
@@ -43,7 +43,13 @@ function VotingCategoriesSection({ categories, onVotesSubmit, handleLogout }) {
 	return (
 		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 			{/* Título */}
-			<h2 className='mb-8 text-6xl font-bold text-center uppercase text-primary'>
+			<h2 className='flex items-center justify-between mb-8 text-6xl font-bold text-center uppercase text-primary'>
+				<button
+					onClick={goBack}
+					className='px-4 py-2 font-semibold text-white rounded-lg bg-secondary'
+				>
+					Atras
+				</button>
 				{currentCategory.name}
 			</h2>
 
