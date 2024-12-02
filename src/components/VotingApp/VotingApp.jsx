@@ -6,58 +6,60 @@ import VotingSection from "../VotingSection/VotingSection";
 import CATEGORIES from "../../data/categories.json";
 
 function VotingApp() {
-	const [user, setUser] = useState(null); // Estado del usuario
+	const [user, setUser] = useState(null); // Estado del usuario autenticado
 	const [hasVoted, setHasVoted] = useState(false); // Estado para verificar si ya votó
-	console.log(user);
-	console.log(hasVoted);
-	
-	
+	const [loading, setLoading] = useState(true); // Estado de carga
 
 	// Verificar si el usuario ya está autenticado y validar votos
 	useEffect(() => {
-		// Obtener sesión actual
-		const fetchSession = async () => {
+		const fetchSessionAndValidate = async () => {
+			setLoading(true);
+
+			// Obtener la sesión actual
 			const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
 
 			if (sessionError) {
 				toast.error("Error al obtener la sesión del usuario.");
+				setLoading(false);
 				return;
 			}
 
 			const user = sessionData?.session?.user ?? null;
 			setUser(user);
 
-			// Si el usuario existe, verificar si ya tiene votos
 			if (user) {
+				// Validar si el email ya tiene votos registrados
 				const { data: votes, error: votesError } = await supabase
 					.from("chinchilla-awards-votes-test")
 					.select("id")
 					.eq("user_email", user.email);
-				console.log(votes);
-				
 
 				if (votesError) {
 					toast.error("Error al verificar los votos del usuario.");
+					setLoading(false);
 					return;
 				}
 
 				if (votes.length > 0) {
-					// Si ya votó, se bloquea el acceso
+					// Si ya tiene votos, bloquear el acceso
 					toast.error("Este email ya ha registrado votos. No puedes votar nuevamente.");
 					setHasVoted(true);
 				}
 			}
+
+			setLoading(false);
 		};
 
 		// Escuchar cambios de autenticación
 		const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
 			const user = session?.user ?? null;
 			setUser(user);
+			if (user) fetchSessionAndValidate();
 		});
 
-		fetchSession();
+		fetchSessionAndValidate();
 
-		return () => listener.unsubscribe(); // Limpieza al desmontar
+		return () => listener.unsubscribe(); // Limpiar el listener al desmontar
 	}, []);
 
 	// Función para registrar los votos
@@ -86,11 +88,20 @@ function VotingApp() {
 			toast.error("Error al cerrar sesión: " + error.message);
 		} else {
 			toast.success("Sesión cerrada correctamente.");
-			setUser(null); // Se asegura de limpiar el estado del usuario
+			setUser(null); // Limpiar el estado del usuario
+			setHasVoted(false); // Resetear el estado de "hasVoted"
 		}
 	};
 
 	// Renderizado condicional según el estado del usuario
+	if (loading) {
+		return (
+			<div className='flex items-center justify-center h-screen'>
+				<p className='text-white'>Cargando...</p>
+			</div>
+		);
+	}
+
 	if (!user) {
 		return <LoginScreen />;
 	}
