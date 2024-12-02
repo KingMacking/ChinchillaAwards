@@ -26,7 +26,7 @@ function VotingApp() {
 			// Verificar si el email ya tiene votos registrados
 			const { data: existingVotes, error: checkError } = await supabase
 				.from("chinchilla-awards-votes-test")
-				.select("id")
+				.select("user_votes")
 				.eq("user_email", user.email);
 
 			if (checkError) {
