@@ -34,6 +34,8 @@ function VotingApp() {
 				return;
 			}
 			console.log(existingVotes);
+			console.log(user.email);
+			
 			
 			if (existingVotes.length > 0 && existingVotes[0].user_votes?.length > 0) {
 				// Si ya existen votos registrados en el array, mostrar una alerta y no permitir votar
