@@ -23,42 +23,40 @@ function VotingApp() {
 	// Función para registrar los votos
 	const handleVote = async (votes) => {
 		try {
-			// Verificar si el email ya tiene votos registrados
-			const { data: existingVotes, error: checkError } = await supabase
-				.from("chinchilla-awards-votes-test")
-				.select("user_votes")
-				.eq("user_email", user.email);
-	
-			if (checkError) {
-				toast.error("Error al verificar los votos. Intenta nuevamente.");
-				return;
-			}
-			console.log(existingVotes);
-			console.log(user.email);
-			
-			
-			if (existingVotes.length > 0 && existingVotes[0].user_votes?.length > 0) {
-				// Si ya existen votos registrados en el array, mostrar una alerta y no permitir votar
-				toast.error("Este email ya ha registrado votos. No puedes votar nuevamente.");
-				return;
-			}
-	
-			// Registrar los votos en la base de datos
+			// Intentar registrar los votos
 			const { error: voteError } = await supabase
 				.from("chinchilla-awards-votes-test")
 				.insert([{ user_email: user.email, user_votes: votes }]);
-	
+
+			// Si ocurre un error, verificar si es por la restricción de unicidad
 			if (voteError) {
-				toast.error("Error al registrar los votos. Intenta nuevamente.");
-				return;
+				if (voteError.message.includes("duplicate key value")) {
+					// Error por email duplicado
+					toast.error("Este email ya ha registrado votos. No puedes votar nuevamente.");
+					return;
+				} else {
+					// Otros errores
+					toast.error("Error al registrar los votos. Intenta nuevamente.");
+					return;
+				}
 			}
-	
+
+			// Si no hay errores, mostrar éxito
 			toast.success("Votos registrados con éxito.");
 			setTimeout(() => {
 				toast.info("¡Gracias por votar en los Chinchilla Awards!");
 			}, 1500);
-	
-			// Opcional: cerrar sesión después de votar
+
+			// Cerrar sesión del usuario después de votar
+			const { error: logoutError } = await supabase.auth.signOut();
+			if (logoutError) {
+				toast.error(
+					"Error al cerrar sesión después de votar. Por favor, intente nuevamente."
+				);
+				return;
+			}
+
+			// Resetear el estado del usuario
 			setUser(null);
 		} catch (error) {
 			toast.error("Ocurrió un error inesperado. Por favor, intente nuevamente.");
@@ -80,7 +78,7 @@ function VotingApp() {
 	}
 
 	return (
-		<main className="flex items-start h-full py-12 overflow-y-scroll">
+		<main className='flex items-start h-full py-12 overflow-y-scroll'>
 			<VotingSection
 				categories={CATEGORIES}
 				onVotesSubmit={handleVote}
