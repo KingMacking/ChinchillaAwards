@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "sonner";
 
-function VotingClipsSection({ categories, onVotesSubmit, handleLogout }) {
+function VotingClipsSection({ categories, onVotesSubmit, handleLogout, goBack }) {
 	const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
 	const [votes, setVotes] = useState(
 		categories.map((category) => ({
