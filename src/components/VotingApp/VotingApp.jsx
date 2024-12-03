@@ -40,12 +40,9 @@ function VotingApp() {
 
 				const { data, error } = await supabase.from(tableName).select("*");
 
-				console.log(data, error);
-
 				if (error && error.code !== "PGRST116") {
 					throw error;
 				}
-				console.log(data);
 
 				if (data && data.length > 0) {
 					setHasVoted(true); // Usuario ya votó

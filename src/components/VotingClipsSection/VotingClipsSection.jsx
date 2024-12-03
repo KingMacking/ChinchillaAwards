@@ -65,7 +65,7 @@ function VotingClipsSection({ categories, onVotesSubmit, handleLogout, goBack })
 							key={participant.id}
 							onClick={() => handleVoteChange(participant.id)}
 							className={`cursor-pointer p-4 text-lg font-semibold border rounded-lg transition-all duration-300 ${
-								isSelected ? "bg-primary text-black" : "bg-transparent text-white"
+								isSelected ? "bg-primary text-black border-primary" : "bg-transparent text-white"
 							}`}
 						>
 							{participant.clipName} - {participant.authorName}
