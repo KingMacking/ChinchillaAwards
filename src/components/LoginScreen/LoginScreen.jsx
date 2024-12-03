@@ -53,10 +53,10 @@ function LoginScreen() {
 	return (
 		<div className='flex flex-col items-center justify-center w-screen h-screen'>
 			<div className='bg-[#000816] bg-opacity-50 rounded-lg h-auto p-10 shadow-md backdrop-blur-md max-w-4xl w-full text-center'>
-				<img src='/assets/thechinchillaawardslogo.png' alt='Logo' className='max-w-xl mx-auto mb-4' />
+				<img src='/assets/thechinchillaawardslogo.png' alt='Logo' className='max-w-full mx-auto mb-4 md:max-w-xl' />
 
 				{/* Contador */}
-				<p className='p-5 mb-6 font-semibold text-white border border-white rounded-md text-8xl'>
+				<p className='p-5 mb-6 font-semibold text-white border border-white rounded-md text-3xlxl sm:text-4xl lg:text-8xl'>
 					{timeLeft}
 				</p>
 
