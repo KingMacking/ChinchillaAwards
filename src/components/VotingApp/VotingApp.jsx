@@ -35,8 +35,8 @@ function VotingApp() {
 			try {
 				const tableName =
 					currentVoteType === "categories"
-						? "chinchilla-awards-votes-test"
-						: "chinchilla-awards-votes-clips-test";
+						? "chinchilla-awards-votes-categories"
+						: "chinchilla-awards-votes-clips";
 
 				const { data, error } = await supabase.from(tableName).select("*");
 
@@ -68,8 +68,8 @@ function VotingApp() {
 		try {
 			const tableName =
 				currentVoteType === "categories"
-					? "chinchilla-awards-votes-test"
-					: "chinchilla-awards-votes-clips-test";
+				? "chinchilla-awards-votes-categories"
+				: "chinchilla-awards-votes-clips";
 
 			const { error: voteError } = await supabase
 				.from(tableName)

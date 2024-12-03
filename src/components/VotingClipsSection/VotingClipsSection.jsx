@@ -82,12 +82,6 @@ function VotingClipsSection({ categories, onVotesSubmit, handleLogout, goBack })
 				>
 					Atras
 				</button>
-				<button
-					className='px-6 py-3 font-semibold text-white rounded-lg bg-secondary'
-					onClick={handleLogout}
-				>
-					Logout
-				</button>
 				{currentCategoryIndex !== 0 && (
 					<button
 						onClick={handlePrevCategory}
