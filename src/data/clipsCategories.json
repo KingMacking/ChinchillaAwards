@@ -4,7 +4,7 @@
 		"name": "Mas Cringe",
 		"videoUrl": "zfLgLVvyylI",
 		"participants": [
-			{ "id": 1, "clipName": "hago la de shrek", "authorName": "Nexusnib" },
+			{ "id": 1, "clipName": "hago la de shrek", "authorName": "Nexus_nib" },
 			{ "id": 2, "clipName": "todos juegos los rotos de zelda", "authorName": "Nexus_nib" },
 			{ "id": 3, "clipName": "onda onda ondaaau", "authorName": "Nightray_97" },
 			{ "id": 4, "clipName": "PERO KE RIKOOO", "authorName": "Nightray_97" },
@@ -62,7 +62,7 @@
 		"participants": [
 			{ "id": 1, "clipName": "otaku toca agua y muere del susto", "authorName": "DanteM45" },
 			{ "id": 2, "clipName": "S u r p r i s e", "authorName": "Vetron" },
-			{ "id": 3, "clipName": "Sustitooo", "authorName": "Paic" },
+			{ "id": 3, "clipName": "Sustitooo", "authorName": "paic__" },
 			{ "id": 4, "clipName": "panik", "authorName": "DanteM45" },
 			{ "id": 5, "clipName": "A donde crees que vas?", "authorName": "SpKrashek" }
 		]
@@ -93,6 +93,18 @@
 			{ "id": 3, "clipName": "Farmeados por Gullurdd", "authorName": "Maruuhchan" },
 			{ "id": 4, "clipName": "60 sec al filo", "authorName": "fpsjulf" },
 			{ "id": 5, "clipName": "julf, clipeamelo", "authorName": "fpsjulf" }
+		]
+	},
+	{
+		"id": 8,
+		"name": "COTY",
+		"videoUrl": "lvDcwh64y6E",
+		"participants": [
+			{ "id": 1, "clipName": "Un copado el coil head", "authorName": "TaroLRPM" },
+			{ "id": 2, "clipName": "Hay que cerrar el estadio", "authorName": "Nexus_nib" },
+			{ "id": 3, "clipName": "no tiene manos xd", "authorName": "tatOkhz" },
+			{ "id": 4, "clipName": "Cepheus se fue al pasto", "authorName": "Lennoxasdasd" },
+			{ "id": 5, "clipName": "panik", "authorName": "DanteM45" }
 		]
 	}
 ]

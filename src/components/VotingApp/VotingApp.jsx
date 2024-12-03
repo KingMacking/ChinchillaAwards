@@ -35,8 +35,8 @@ function VotingApp() {
 			try {
 				const tableName =
 					currentVoteType === "categories"
-						? "chinchilla-awards-votes-test"
-						: "chinchilla-awards-votes-clips-test";
+						? import.meta.env.VITE_SUPABASE_CATEGORIES_NAME
+						: import.meta.env.VITE_SUPABASE_CLIPS_NAME;
 
 				const { data, error } = await supabase.from(tableName).select("*");
 
@@ -67,8 +67,8 @@ function VotingApp() {
 		try {
 			const tableName =
 				currentVoteType === "categories"
-					? "chinchilla-awards-votes-test"
-					: "chinchilla-awards-votes-clips-test";
+					? import.meta.env.VITE_SUPABASE_CATEGORIES_NAME
+					: import.meta.env.VITE_SUPABASE_CLIPS_NAME;
 
 			const { error: voteError } = await supabase
 				.from(tableName)
