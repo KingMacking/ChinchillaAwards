@@ -35,8 +35,8 @@ function VotingApp() {
 			try {
 				const tableName =
 					currentVoteType === "categories"
-						? import.meta.env.VITE_SUPABASE_CATEGORIES_NAME
-						: import.meta.env.VITE_SUPABASE_CLIPS_NAME;
+						? "chinchilla-awards-votes-test"
+						: "chinchilla-awards-votes-clips-test";
 
 				const { data, error } = await supabase.from(tableName).select("*");
 
@@ -54,6 +54,7 @@ function VotingApp() {
 				}
 			} catch (error) {
 				toast.error("Error verificando los votos. Por favor, intenta nuevamente.");
+				setCurrentVoteType(null)
 			} finally {
 				setLoading(false);
 			}
@@ -67,8 +68,8 @@ function VotingApp() {
 		try {
 			const tableName =
 				currentVoteType === "categories"
-					? import.meta.env.VITE_SUPABASE_CATEGORIES_NAME
-					: import.meta.env.VITE_SUPABASE_CLIPS_NAME;
+					? "chinchilla-awards-votes-test"
+					: "chinchilla-awards-votes-clips-test";
 
 			const { error: voteError } = await supabase
 				.from(tableName)
