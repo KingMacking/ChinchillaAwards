@@ -14,8 +14,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 					: "chinchilla-awards-votes-clips";
 
 			const { data, error } = await supabase.from(tableName).select("user_votes");
-            console.log(data);
-            
+			console.log(data);
 
 			if (error) {
 				toast.error("Error al obtener los votos.");
@@ -76,36 +75,43 @@ const ResultsSection = ({ selectedTab, categories }) => {
 		const fetchAndSetResults = async () => {
 			const votesData = await fetchVotes();
 			const resultsData = calculateResults(votesData, categories);
+
 			setResults(resultsData);
+			console.log(resultsData);
 		};
 
 		fetchAndSetResults();
 	}, [selectedTab]);
 
 	return (
-		<div className='results-section'>
-			<div className='categories-list'>
+		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
+			{/* Lista de categorías */}
+			<div className='grid grid-cols-1 gap-4 mb-8'>
 				{categories.map((item) => (
 					<div
 						key={item.id}
-						className='category-item'
+						className='p-4 transition-all duration-200 rounded-lg cursor-pointer category-item hover:bg-secondary'
 						onClick={() => setSelectedCategory(item.id)}
 					>
-						{item.name}
+						<h3 className='text-xl text-center text-primary'>{item.name}</h3>
 					</div>
 				))}
 			</div>
 
-			<div className='results'>
+			{/* Resultados */}
+			<div className='mt-8'>
 				{selectedCategory && (
 					<div className='result-details'>
 						{results
 							.filter((result) => result.categoryId === selectedCategory)
 							.map((result) => (
-								<div key={result.categoryId}>
-									<h3>{result.categoryName}</h3>
-									<p>Ganador: {result.winner}</p>
-									<p>Puntos: {result.points}</p>
+								<div
+									key={result.categoryId}
+									className='bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-6'
+								>
+									<h3 className='text-2xl text-primary'>{result.categoryName}</h3>
+									<p className='text-white'>Ganador: {result.winner}</p>
+									<p className='text-white'>Puntos: {result.points}</p>
 								</div>
 							))}
 					</div>
