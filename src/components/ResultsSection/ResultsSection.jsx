@@ -93,7 +93,11 @@ const ResultsSection = ({ selectedTab, categories }) => {
 	console.log(results);
 
 	
-    const currentResults = results.find((result) => result.categoryId === selectedCategory);
+    const currentResults = results.find((result) => {
+        console.log(result);
+        return result.categoryId === selectedCategory
+        
+    });
     console.log('resultados actuales:' + currentResults);
 	return (
 		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
