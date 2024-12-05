@@ -132,12 +132,12 @@ function VotingApp() {
 					>
 						Votar clips of the year
 					</button>
-					<button
+					{/* <button
 						onClick={handleLogout}
 						className='px-6 py-3 text-lg font-semibold text-white border rounded-lg border-secondary hover:bg-opacity-80'
 					>
 						Cerrar sesión
-					</button>
+					</button> */}
 				</div>
 			</main>
 		);
