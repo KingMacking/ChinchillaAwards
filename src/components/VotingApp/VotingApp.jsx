@@ -6,6 +6,7 @@ import VotingCategoriesSection from "../VotingCategoriesSection/VotingCategories
 import VotingClipsSection from "../VotingClipsSection/VotingClipsSection";
 import CATEGORIES from "../../data/categories.json";
 import CATEGORIES_CLIPS from "../../data/clipsCategories.json";
+import ResultsSection from "../ResultsSection/ResultsSection";
 
 function VotingApp() {
 	const [user, setUser] = useState(null);
@@ -168,20 +169,23 @@ function VotingApp() {
 	return (
 		<main className='flex flex-col items-start h-auto gap-6 py-12 '>
 			{currentVoteType === "categories" && (
-				<VotingCategoriesSection
-					categories={CATEGORIES}
-					onVotesSubmit={handleVote}
-					handleLogout={handleLogout}
-					goBack={() => setCurrentVoteType(null)}
-				/>
+				// <VotingCategoriesSection
+				// 	categories={CATEGORIES}
+				// 	onVotesSubmit={handleVote}
+				// 	handleLogout={handleLogout}
+				// 	goBack={() => setCurrentVoteType(null)}
+				// />
+				<ResultsSection categories={CATEGORIES_CLIPS} selectedTab={currentVoteType} goBack={() => setCurrentVoteType(null)}/>
 			)}
 			{currentVoteType === "clips" && (
-				<VotingClipsSection
-					categories={CATEGORIES_CLIPS} // Reemplaza con los datos de los clips
-					onVotesSubmit={handleVote}
-					handleLogout={handleLogout}
-					goBack={() => setCurrentVoteType(null)}
-				/>
+				// <VotingClipsSection
+				// 	categories={CATEGORIES_CLIPS} // Reemplaza con los datos de los clips
+				// 	onVotesSubmit={handleVote}
+				// 	handleLogout={handleLogout}
+				// 	goBack={() => setCurrentVoteType(null)}
+				// />
+
+				<ResultsSection categories={CATEGORIES_CLIPS} selectedTab={currentVoteType} goBack={() => setCurrentVoteType(null)}/>
 			)}
 		</main>
 	);

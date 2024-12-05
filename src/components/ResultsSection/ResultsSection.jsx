@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "./supabaseClient";
-import CATEGORIES from "../../data/categories.json";
-import CATEGORIES_CLIPS from "../../data/clipsCategories.json";
 
-const ResultsSection = () => {
-	const [selectedTab, setSelectedTab] = useState("categories"); // 'categories' o 'clips'
+const ResultsSection = ({ selectedTab, categories }) => {
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	const [results, setResults] = useState([]);
 
@@ -32,7 +29,7 @@ const ResultsSection = () => {
 	};
 
 	// Calcular los resultados de los votos para la categoría seleccionada
-	const calculateResults = (votesData, categoriesOrClipsData) => {
+	const calculateResults = (votesData, categories) => {
 		const voteCounts = {};
 
 		// Contamos los votos para cada participante por categoría
@@ -59,9 +56,7 @@ const ResultsSection = () => {
 				}));
 
 			const winner = sortedParticipants[0]; // El ganador es el primero en la lista
-			const categoryName = categoriesOrClipsData.find(
-				(c) => c.id === parseInt(categoryId)
-			).name;
+			const categoryName = categories.find((c) => c.id === parseInt(categoryId)).name;
 
 			return {
 				categoryId,
@@ -78,10 +73,7 @@ const ResultsSection = () => {
 	useEffect(() => {
 		const fetchAndSetResults = async () => {
 			const votesData = await fetchVotes();
-			const resultsData = calculateResults(
-				votesData,
-				selectedTab === "categories" ? CATEGORIES : CATEGORIES_CLIPS
-			);
+			const resultsData = calculateResults(votesData, categories);
 			setResults(resultsData);
 		};
 
@@ -90,15 +82,8 @@ const ResultsSection = () => {
 
 	return (
 		<div className='results-section'>
-			{/* Selector para cambiar entre categorías y clips */}
-			<div className='tab-selector'>
-				<button onClick={() => setSelectedTab("categories")}>Categorías</button>
-				<button onClick={() => setSelectedTab("clips")}>Clips</button>
-			</div>
-
-			{/* Lista de categorías/clips */}
 			<div className='categories-list'>
-				{(selectedTab === "categories" ? CATEGORIES : CATEGORIES_CLIPS).map((item) => (
+				{categories.map((item) => (
 					<div
 						key={item.id}
 						className='category-item'
@@ -109,20 +94,15 @@ const ResultsSection = () => {
 				))}
 			</div>
 
-			{/* Resultados de la categoría seleccionada */}
 			<div className='results'>
 				{selectedCategory && (
 					<div className='result-details'>
-						<h3>
-							Resultados de {selectedTab === "categories" ? "Categoría" : "Clip"}:{" "}
-							{selectedCategory}
-						</h3>
 						{results
 							.filter((result) => result.categoryId === selectedCategory)
 							.map((result) => (
 								<div key={result.categoryId}>
-									<p>Categoria: {result.categoryName}</p>
-									<p>Ganador: Participante {result.winner}</p>
+									<h3>{result.categoryName}</h3>
+									<p>Ganador: {result.winner}</p>
 									<p>Puntos: {result.points}</p>
 								</div>
 							))}
