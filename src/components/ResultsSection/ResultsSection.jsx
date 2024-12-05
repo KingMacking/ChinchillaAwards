@@ -123,7 +123,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 						<div className='result-details'>
 							{/* Top 3 */}
 							<div className='mb-8'>
-								{results.results
+								{results
 									.filter((result) => result.categoryId === selectedCategory)
 									.map((result, index) => (
 										<div key={result.participantId} className='mb-6'>
@@ -156,7 +156,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 
 							{/* Resto de los participantes */}
 							<div>
-								{results.results
+								{results
 									.filter((result) => result.categoryId === selectedCategory)
 									.map((result, index) => (
 										<div key={result.participantId}>
