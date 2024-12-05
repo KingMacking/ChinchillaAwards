@@ -78,6 +78,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 
 			setResults(resultsData);
 			console.log(resultsData);
+			console.log(selectedCategory);
 		};
 
 		fetchAndSetResults();
@@ -86,36 +87,41 @@ const ResultsSection = ({ selectedTab, categories }) => {
 	return (
 		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 			{/* Lista de categorías */}
-			<div className='grid grid-cols-1 gap-4 mb-8'>
-				{categories.map((item) => (
-					<div
-						key={item.id}
-						className='p-4 transition-all duration-200 rounded-lg cursor-pointer category-item hover:bg-secondary'
-						onClick={() => setSelectedCategory(item.id)}
-					>
-						<h3 className='text-xl text-center text-primary'>{item.name}</h3>
-					</div>
-				))}
-			</div>
+			<div className='flex items-start'>
+				<div className='flex flex-col flex-[1]'>
+					{categories.map((item) => (
+						<button
+							key={item.id}
+							className='px-4 py-2 text-lg transition-all duration-200 rounded-lg cursor-pointer category-item text-primary hover:bg-secondary hover:text-white'
+							onClick={() => setSelectedCategory(item.id)}
+							type='button'
+						>
+							{item.name}
+						</button>
+					))}
+				</div>
 
-			{/* Resultados */}
-			<div className='mt-8'>
-				{selectedCategory && (
-					<div className='result-details'>
-						{results
-							.filter((result) => result.categoryId === selectedCategory)
-							.map((result) => (
-								<div
-									key={result.categoryId}
-									className='bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-6'
-								>
-									<h3 className='text-2xl text-primary'>{result.categoryName}</h3>
-									<p className='text-white'>Ganador: {result.winner}</p>
-									<p className='text-white'>Puntos: {result.points}</p>
-								</div>
-							))}
-					</div>
-				)}
+				{/* Resultados */}
+				<div className='flex-[3]'>
+					{selectedCategory && (
+						<div className='result-details'>
+							{results
+								.filter((result) => result.categoryId === selectedCategory)
+								.map((result) => (
+									<div
+										key={result.categoryId}
+										className='bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-6'
+									>
+										<h3 className='text-2xl text-primary'>
+											{result.categoryName}
+										</h3>
+										<p className='text-white'>Ganador: {result.winner}</p>
+										<p className='text-white'>Puntos: {result.points}</p>
+									</div>
+								))}
+						</div>
+					)}
+				</div>
 			</div>
 		</div>
 	);
