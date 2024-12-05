@@ -4,7 +4,6 @@ import { supabase } from "../../supabaseClient";
 const ResultsSection = ({ selectedTab, categories }) => {
 	const [selectedCategory, setSelectedCategory] = useState(1);
 	const [results, setResults] = useState([]);
-	console.log(categories);
 
 	// Simulamos la obtención de votos desde los archivos JSON locales
 	const fetchVotes = async () => {
@@ -90,7 +89,6 @@ const ResultsSection = ({ selectedTab, categories }) => {
 		fetchAndSetResults();
 	}, [selectedTab]);
 
-	console.log(results);
 
 	
     const currentResults = results.find((result) => {
