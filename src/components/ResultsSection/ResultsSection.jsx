@@ -85,15 +85,14 @@ const ResultsSection = ({ selectedTab, categories }) => {
 			const resultsData = calculateResults(votesData, categories);
 
 			setResults(resultsData);
-			console.log(resultsData);
 		};
 
 		fetchAndSetResults();
 	}, [selectedTab]);
 
-	console.log(selectedCategory);
+    console.log(results);
+    
 
-	console.log(results.filter((result) => result.categoryId === selectedCategory));
 	return (
 		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 			{/* Lista de categorías */}
