@@ -95,7 +95,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 		<div className='w-full max-w-4xl p-4 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md gap-4 flex items-start'>
 			{/* Lista de categorías */}
 			<div className='flex items-start'>
-				<div className='flex flex-col flex-[1]'>
+				<div className='flex flex-col'>
 					{categories.map((item) => {
 						return (
 							<button
@@ -115,22 +115,22 @@ const ResultsSection = ({ selectedTab, categories }) => {
 				</div>
 
 				{/* Resultados */}
-				<div className='flex-[3]'>
+				<div className=''>
 					{selectedCategory && (
 						<div className='result-details'>
 							{/* Top 1 */}
 							<div className='flex mb-8'>
 								{currentResult?.results.map((result, index) => (
-									<div key={result.participantId} className='mb-6'>
+									<div key={result.participantId} className='mb-4'>
 										{index === 0 && (
 											<div
 												className={`bg-[#000816] bg-opacity-60 p-6 flex-1 flex flex-col gap-4 rounded-lg border-2 border-primary`}
 											>
-												<div className='flex items-center'>
+												<div className='flex items-center gap-6'>
 													<img
 														src={result.img}
 														alt={result.name}
-														className='object-cover w-24 h-32 rounded-md'
+														className='object-cover w-64 h-auto rounded-md'
 													/>
 													<div>
 														<h3 className='text-3xl text-primary'>
@@ -152,7 +152,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 								{currentResult?.results.map((result, index) => (
 									<div key={result.participantId}>
 										{index > 0 && (
-											<div className='bg-[#000816] bg-opacity-60 px-4 py-2 rounded-lg shadow-md mb-4'>
+											<div className='bg-[#000816] bg-opacity-60 px-4 py-2 rounded-lg mb-2'>
 												<h3 className='text-xl text-primary'>
 													{result.name}
 												</h3>
