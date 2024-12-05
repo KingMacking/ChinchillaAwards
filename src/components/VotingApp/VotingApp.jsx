@@ -117,20 +117,20 @@ function VotingApp() {
 					¡Bienvenido a los Chinchilla Awards!
 				</h1>
 				<p className='text-lg text-white'>
-					Por favor, selecciona el tipo de votación en el que deseas participar.
+					Por favor, selecciona el tipo de votación en el que deseas ver los resultados.
 				</p>
 				<div className='flex flex-col gap-4'>
 					<button
 						onClick={() => setCurrentVoteType("categories")}
 						className='px-6 py-3 text-lg font-semibold text-black rounded-lg bg-primary hover:bg-opacity-80'
 					>
-						Votar categorías streamers
+						Categorías streamers
 					</button>
 					<button
 						onClick={() => setCurrentVoteType("clips")}
 						className='px-6 py-3 text-lg font-semibold text-white rounded-lg bg-secondary hover:bg-opacity-80'
 					>
-						Votar clips of the year
+						Clips of the year
 					</button>
 					{/* <button
 						onClick={handleLogout}
