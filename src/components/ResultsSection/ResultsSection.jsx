@@ -92,7 +92,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 		return result.categoryId === selectedCategory;
 	});
 	return (
-		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md gap-4'>
+		<div className='w-full max-w-4xl p-4 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md gap-4 flex items-start'>
 			{/* Lista de categorías */}
 			<div className='flex items-start'>
 				<div className='flex flex-col flex-[1]'>
@@ -118,24 +118,22 @@ const ResultsSection = ({ selectedTab, categories }) => {
 				<div className='flex-[3]'>
 					{selectedCategory && (
 						<div className='result-details'>
-							{/* Top 3 */}
+							{/* Top 1 */}
 							<div className='flex mb-8'>
 								{currentResult?.results.map((result, index) => (
 									<div key={result.participantId} className='mb-6'>
-										{index < 3 && (
+										{index === 0 && (
 											<div
-												className={`bg-[#000816] bg-opacity-60 p-6 flex-1 flex flex-col gap-2 rounded-lg ${
-													index === 0 ? "border-4 border-primary" : ""
-												}`}
+												className={`bg-[#000816] bg-opacity-60 p-6 flex-1 flex flex-col gap-4 rounded-lg border-2 border-primary`}
 											>
 												<div className='flex items-center'>
 													<img
 														src={result.img}
 														alt={result.name}
-														className='object-cover w-12 h-16 rounded-md'
+														className='object-cover w-24 h-32 rounded-md'
 													/>
 													<div>
-														<h3 className='text-primary'>
+														<h3 className='text-3xl text-primary'>
 															{result.name}
 														</h3>
 														<p className='text-white'>
@@ -153,7 +151,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 							<div>
 								{currentResult?.results.map((result, index) => (
 									<div key={result.participantId}>
-										{index >= 3 && (
+										{index > 0 && (
 											<div className='bg-[#000816] bg-opacity-60 px-4 py-2 rounded-lg shadow-md mb-4'>
 												<h3 className='text-xl text-primary'>
 													{result.name}
