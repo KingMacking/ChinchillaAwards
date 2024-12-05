@@ -63,7 +63,13 @@ const ResultsSection = ({ selectedTab, categories }) => {
 			return {
 				categoryId: parseInt(categoryId),
 				categoryName,
-				winner: winner.participantId,
+				winner: {
+					id: winner.participantId,
+					img: `/assets/participants-pictures/${
+						categories[selectedCategory - 1].participants[winner.participantId].image
+					}`,
+					name: categories[selectedCategory - 1].participants[winner.participantId].name,
+				},
 				points: winner.points,
 			};
 		});
@@ -83,56 +89,53 @@ const ResultsSection = ({ selectedTab, categories }) => {
 
 		fetchAndSetResults();
 	}, [selectedTab]);
-    
-    console.log(selectedCategory);
-    
+
+	console.log(selectedCategory);
+
 	console.log(results.filter((result) => result.categoryId === selectedCategory));
 	return (
-		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
-			{/* Lista de categorías */}
-			<div className='flex items-start'>
-				<div className='flex flex-col flex-[1]'>
-					{categories.map((item) => {
-						console.log(item);
-						return (
-							<button
-								key={item.id}
-								className={`px-4 py-2 text-lg transition-all duration-200 rounded-lg cursor-pointer category-item border border-transparent text-white uppercase hover:border-secondary ${
-									selectedCategory === item.id
-										? "bg-primary text-white font-bold hover:text-white"
-										: ""
-								} `}
-								onClick={() => setSelectedCategory(item.id)}
-								type='button'
-							>
-								{item.name}
-							</button>
-						);
-					})}
-				</div>
+		<div className='flex-[3]'>
+			{selectedCategory && (
+				<div className='result-details'>
+					{/* Top 3 */}
+					<div className='mb-8'>
+						{results
+							.filter((result) => result.categoryId === selectedCategory)
+							.sort((a, b) => b.points - a.points) // Ordenamos por puntos, de mayor a menor
+							.slice(0, 3) // Tomamos solo los primeros 3
+							.map((result, index) => (
+								<div
+									key={result.categoryId}
+									className={`bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-6 ${
+										index === 0 ? "border-4 border-primary" : "" // resaltar al ganador
+									}`}
+								>
+									<h3 className='text-2xl text-primary'>{result.categoryName}</h3>
+									<p className='text-white'>Ganador: {result.winner}</p>
+									<p className='text-white'>Puntos: {result.points}</p>
+								</div>
+							))}
+					</div>
 
-				{/* Resultados */}
-				<div className='flex-[3]'>
-					{selectedCategory && (
-						<div className='result-details'>
-							{results
-								.filter((result) => result.categoryId === selectedCategory)
-								.map((result) => (
-									<div
-										key={result.categoryId}
-										className='bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-6'
-									>
-										<h3 className='text-2xl text-primary'>
-											{result.categoryName}
-										</h3>
-										<p className='text-white'>Ganador: {result.winner}</p>
-										<p className='text-white'>Puntos: {result.points}</p>
-									</div>
-								))}
-						</div>
-					)}
+					{/* Resto de los participantes */}
+					<div>
+						{results
+							.filter((result) => result.categoryId === selectedCategory)
+							.sort((a, b) => b.points - a.points) // Ordenamos por puntos
+							.slice(3) // Tomamos los restantes
+							.map((result) => (
+								<div
+									key={result.categoryId}
+									className='bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-4'
+								>
+									<h3 className='text-xl text-primary'>{result.categoryName}</h3>
+									<p className='text-white'>Participante: {result.winner}</p>
+									<p className='text-white'>Puntos: {result.points}</p>
+								</div>
+							))}
+					</div>
 				</div>
-			</div>
+			)}
 		</div>
 	);
 };
