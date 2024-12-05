@@ -122,7 +122,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 							{/* Top 3 */}
 							{}
 							<div className='mb-8'>
-								{currentResult.results.map((result, index) => (
+								{currentResult?.results.map((result, index) => (
 									<div key={result.participantId} className='mb-6'>
 										{index < 3 && (
 											<div
@@ -153,7 +153,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 
 							{/* Resto de los participantes */}
 							<div>
-								{currentResult.results.map((result, index) => (
+								{currentResult?.results.map((result, index) => (
 									<div key={result.participantId}>
 										{index >= 3 && (
 											<div className='bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-4'>
