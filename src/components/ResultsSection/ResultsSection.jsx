@@ -61,7 +61,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 			const categoryName = categories.find((c) => c.id === parseInt(categoryId)).name;
 
 			return {
-				categoryId,
+				categoryId: parseInt(categoryId),
 				categoryName,
 				winner: winner.participantId,
 				points: winner.points,
@@ -97,9 +97,9 @@ const ResultsSection = ({ selectedTab, categories }) => {
 						return (
 							<button
 								key={item.id}
-								className={`px-4 py-2 text-lg transition-all duration-200 rounded-lg cursor-pointer category-item border border-transparent text-white uppercase hover:border-secondary hover:text-primary ${
+								className={`px-4 py-2 text-lg transition-all duration-200 rounded-lg cursor-pointer category-item border border-transparent text-white uppercase hover:border-secondary ${
 									selectedCategory === item.id
-										? "bg-primary text-white font-bold"
+										? "bg-primary text-white font-bold hover:text-white"
 										: ""
 								} `}
 								onClick={() => setSelectedCategory(item.id)}
