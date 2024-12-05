@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { supabase } from "../../supabaseClient";
 
 const ResultsSection = ({ selectedTab, categories }) => {
-	const [selectedCategory, setSelectedCategory] = useState(null);
+	const [selectedCategory, setSelectedCategory] = useState(1);
 	const [results, setResults] = useState([]);
 	console.log(categories);
 
@@ -79,12 +79,14 @@ const ResultsSection = ({ selectedTab, categories }) => {
 
 			setResults(resultsData);
 			console.log(resultsData);
-			console.log(selectedCategory);
 		};
 
 		fetchAndSetResults();
 	}, [selectedTab]);
-
+    
+    console.log(selectedCategory);
+    
+	console.log(results.filter((result) => result.categoryId === selectedCategory));
 	return (
 		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 			{/* Lista de categorías */}
@@ -95,7 +97,11 @@ const ResultsSection = ({ selectedTab, categories }) => {
 						return (
 							<button
 								key={item.id}
-								className='px-4 py-2 text-lg transition-all duration-200 rounded-lg cursor-pointer category-item text-primary hover:bg-secondary hover:text-white'
+								className={`px-4 py-2 text-lg transition-all duration-200 rounded-lg cursor-pointer category-item border border-transparent text-white uppercase hover:border-secondary hover:text-primary ${
+									selectedCategory === item.id
+										? "bg-primary text-white font-bold"
+										: ""
+								} `}
 								onClick={() => setSelectedCategory(item.id)}
 								type='button'
 							>
