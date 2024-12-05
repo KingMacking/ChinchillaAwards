@@ -96,6 +96,8 @@ const ResultsSection = ({ selectedTab, categories, goBack }) => {
 			{/* Lista de categorías */}
 			<div className='flex flex-col gap-1'>
 				{categories.map((item) => {
+                    console.log(currentResult);
+                    
 					return (
 						<button
 							key={item.id}
