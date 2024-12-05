@@ -119,7 +119,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 						<div className='result-details'>
 							{/* Top 1 */}
 							<div className='flex mb-8'>
-								{currentResult?.results.map((result, index) => (
+								{/* {currentResult?.results.map((result, index) => (
 									<div key={result.participantId} className='mb-4'>
 										{index === 0 && (
 											<div
@@ -143,7 +143,30 @@ const ResultsSection = ({ selectedTab, categories }) => {
 											</div>
 										)}
 									</div>
-								))}
+								))} */}
+                                <div key={currentResult?.results[0].participantId} className='mb-4'>
+										{index === 0 && (
+											<div
+												className={`bg-[#000816] bg-opacity-60 p-6 flex-1 flex flex-col gap-4 rounded-lg border-2 border-primary`}
+											>
+												<div className='flex items-center gap-6'>
+													<img
+														src={currentResult?.results[0].img}
+														alt={currentResult?.results[0].name}
+														className='object-cover w-64 h-auto rounded-md'
+													/>
+													<div>
+														<h3 className='text-3xl text-primary'>
+															{currentResult?.results[0].name}
+														</h3>
+														<p className='text-white'>
+															Puntos: {currentResult?.results[0].points}
+														</p>
+													</div>
+												</div>
+											</div>
+										)}
+									</div>
 							</div>
 
 							{/* Resto de los participantes */}
