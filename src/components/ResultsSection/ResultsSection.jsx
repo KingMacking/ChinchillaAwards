@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { supabase } from "./supabaseClient";
+import { supabase } from "../../supabaseClient";
 
 const ResultsSection = ({ selectedTab, categories }) => {
 	const [selectedCategory, setSelectedCategory] = useState(null);

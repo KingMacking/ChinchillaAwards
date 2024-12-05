@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { supabase } from "../../supabaseClient";
 import { toast } from "sonner";
 import LoginScreen from "../LoginScreen/LoginScreen";
-import VotingCategoriesSection from "../VotingCategoriesSection/VotingCategoriesSection";
-import VotingClipsSection from "../VotingClipsSection/VotingClipsSection";
 import CATEGORIES from "../../data/categories.json";
 import CATEGORIES_CLIPS from "../../data/clipsCategories.json";
 import ResultsSection from "../ResultsSection/ResultsSection";
@@ -175,7 +173,7 @@ function VotingApp() {
 				// 	handleLogout={handleLogout}
 				// 	goBack={() => setCurrentVoteType(null)}
 				// />
-				<ResultsSection categories={CATEGORIES_CLIPS} selectedTab={currentVoteType} goBack={() => setCurrentVoteType(null)}/>
+				<ResultsSection categories={CATEGORIES} selectedTab={currentVoteType} goBack={() => setCurrentVoteType(null)}/>
 			)}
 			{currentVoteType === "clips" && (
 				// <VotingClipsSection
