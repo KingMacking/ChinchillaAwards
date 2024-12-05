@@ -4,6 +4,7 @@ import { supabase } from "../../supabaseClient";
 const ResultsSection = ({ selectedTab, categories }) => {
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	const [results, setResults] = useState([]);
+	console.log(categories);
 
 	// Simulamos la obtención de votos desde los archivos JSON locales
 	const fetchVotes = async () => {
@@ -89,16 +90,19 @@ const ResultsSection = ({ selectedTab, categories }) => {
 			{/* Lista de categorías */}
 			<div className='flex items-start'>
 				<div className='flex flex-col flex-[1]'>
-					{categories.map((item) => (
-						<button
-							key={item.id}
-							className='px-4 py-2 text-lg transition-all duration-200 rounded-lg cursor-pointer category-item text-primary hover:bg-secondary hover:text-white'
-							onClick={() => setSelectedCategory(item.id)}
-							type='button'
-						>
-							{item.name}
-						</button>
-					))}
+					{categories.map((item) => {
+						console.log(item);
+						return (
+							<button
+								key={item.id}
+								className='px-4 py-2 text-lg transition-all duration-200 rounded-lg cursor-pointer category-item text-primary hover:bg-secondary hover:text-white'
+								onClick={() => setSelectedCategory(item.id)}
+								type='button'
+							>
+								{item.name}
+							</button>
+						);
+					})}
 				</div>
 
 				{/* Resultados */}
