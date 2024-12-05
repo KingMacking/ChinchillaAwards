@@ -52,25 +52,26 @@ const ResultsSection = ({ selectedTab, categories }) => {
 
 			const sortedParticipants = Object.entries(categoryVotes)
 				.sort((a, b) => b[1] - a[1]) // Orden descendente por votos
-				.map(([participantId, points]) => ({
-					participantId,
-					points,
-				}));
+				.map(([participantId, points]) => {
+					// Buscamos al participante por su ID dentro de la categoría
+					const participant = categories
+						.find((c) => c.id === parseInt(categoryId))
+						.participants.find((p) => p.id === parseInt(participantId));
 
-			const winner = sortedParticipants[0]; // El ganador es el primero en la lista
+					return {
+						participantId,
+						points,
+						name: participant.name,
+						img: `/assets/participants-pictures/${participant.image}`,
+					};
+				});
+
 			const categoryName = categories.find((c) => c.id === parseInt(categoryId)).name;
 
 			return {
 				categoryId: parseInt(categoryId),
 				categoryName,
-				winner: {
-					id: winner.participantId,
-					img: `/assets/participants-pictures/${
-						categories[selectedCategory - 1].participants[winner.participantId].image
-					}`,
-					name: categories[selectedCategory - 1].participants[winner.participantId].name,
-				},
-				points: winner.points,
+				results: sortedParticipants, // Devolvemos todos los participantes ordenados
 			};
 		});
 
@@ -101,18 +102,31 @@ const ResultsSection = ({ selectedTab, categories }) => {
 					<div className='mb-8'>
 						{results
 							.filter((result) => result.categoryId === selectedCategory)
-							.sort((a, b) => b.points - a.points) // Ordenamos por puntos, de mayor a menor
-							.slice(0, 3) // Tomamos solo los primeros 3
 							.map((result, index) => (
-								<div
-									key={result.categoryId}
-									className={`bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-6 ${
-										index === 0 ? "border-4 border-primary" : "" // resaltar al ganador
-									}`}
-								>
-									<h3 className='text-2xl text-primary'>{result.categoryName}</h3>
-									<p className='text-white'>Ganador: {result.winner}</p>
-									<p className='text-white'>Puntos: {result.points}</p>
+								<div key={result.participantId} className='mb-6'>
+									{index < 3 && (
+										<div
+											className={`bg-[#000816] bg-opacity-60 p-6 rounded-lg shadow-md ${
+												index === 0 ? "border-4 border-primary" : ""
+											}`}
+										>
+											<div className='flex items-center'>
+												<img
+													src={result.img}
+													alt={result.name}
+													className='object-cover w-16 h-16 mr-4 rounded-full'
+												/>
+												<div>
+													<h3 className='text-2xl text-primary'>
+														{result.name}
+													</h3>
+													<p className='text-white'>
+														Puntos: {result.points}
+													</p>
+												</div>
+											</div>
+										</div>
+									)}
 								</div>
 							))}
 					</div>
@@ -121,16 +135,14 @@ const ResultsSection = ({ selectedTab, categories }) => {
 					<div>
 						{results
 							.filter((result) => result.categoryId === selectedCategory)
-							.sort((a, b) => b.points - a.points) // Ordenamos por puntos
-							.slice(3) // Tomamos los restantes
-							.map((result) => (
-								<div
-									key={result.categoryId}
-									className='bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-4'
-								>
-									<h3 className='text-xl text-primary'>{result.categoryName}</h3>
-									<p className='text-white'>Participante: {result.winner}</p>
-									<p className='text-white'>Puntos: {result.points}</p>
+							.map((result, index) => (
+								<div key={result.participantId}>
+									{index >= 3 && (
+										<div className='bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-4'>
+											<h3 className='text-xl text-primary'>{result.name}</h3>
+											<p className='text-white'>Puntos: {result.points}</p>
+										</div>
+									)}
 								</div>
 							))}
 					</div>
