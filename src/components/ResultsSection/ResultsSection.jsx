@@ -94,7 +94,7 @@ const ResultsSection = ({ selectedTab, categories, goBack }) => {
 	return (
 		<div className='w-full max-w-4xl p-4 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md gap-4 flex items-start'>
 			{/* Lista de categorías */}
-			<div className='flex flex-col gap-1'>
+			<div className='flex flex-col gap-1 min-w-64'>
 				{categories.map((item) => {
                     console.log(currentResult);
                     
