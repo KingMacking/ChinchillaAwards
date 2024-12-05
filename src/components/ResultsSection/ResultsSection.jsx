@@ -118,7 +118,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 				{selectedCategory && (
 					<div className='result-details'>
 						{/* Top 1 */}
-						<div className='flex mb-8'>
+						<div className='flex mb-4'>
 							{/* {currentResult?.results.map((result, index) => (
 									<div key={result.participantId} className='mb-4'>
 										{index === 0 && (
