@@ -14,6 +14,8 @@ const ResultsSection = ({ selectedTab, categories }) => {
 					: "chinchilla-awards-votes-clips";
 
 			const { data, error } = await supabase.from(tableName).select("user_votes");
+            console.log(data);
+            
 
 			if (error) {
 				toast.error("Error al obtener los votos.");
