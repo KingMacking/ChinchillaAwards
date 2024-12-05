@@ -52,25 +52,26 @@ const ResultsSection = ({ selectedTab, categories }) => {
 
 			const sortedParticipants = Object.entries(categoryVotes)
 				.sort((a, b) => b[1] - a[1]) // Orden descendente por votos
-				.map(([participantId, points]) => ({
-					participantId,
-					points,
-				}));
+				.map(([participantId, points]) => {
+					// Buscamos al participante por su ID dentro de la categoría
+					const participant = categories
+						.find((c) => c.id === parseInt(categoryId))
+						.participants.find((p) => p.id === parseInt(participantId));
 
-			const winner = sortedParticipants[0]; // El ganador es el primero en la lista
+					return {
+						participantId,
+						points,
+						name: participant.name,
+						img: `/assets/participants-pictures/${participant.image}`,
+					};
+				});
+
 			const categoryName = categories.find((c) => c.id === parseInt(categoryId)).name;
 
 			return {
 				categoryId: parseInt(categoryId),
 				categoryName,
-				winner: {
-					id: winner.participantId,
-					img: `/assets/participants-pictures/${
-						categories[selectedCategory - 1].participants[winner.participantId].image
-					}`,
-					name: categories[selectedCategory - 1].participants[winner.participantId].name,
-				},
-				points: winner.points,
+				results: sortedParticipants, // Devolvemos todos los participantes ordenados
 			};
 		});
 
