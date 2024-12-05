@@ -89,11 +89,10 @@ const ResultsSection = ({ selectedTab, categories }) => {
 	}, [selectedTab]);
 
 	const currentResult = results.find((result) => {
-		console.log(result);
 		return result.categoryId === selectedCategory;
 	});
 	return (
-		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
+		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md gap-4'>
 			{/* Lista de categorías */}
 			<div className='flex items-start'>
 				<div className='flex flex-col flex-[1]'>
@@ -120,13 +119,12 @@ const ResultsSection = ({ selectedTab, categories }) => {
 					{selectedCategory && (
 						<div className='result-details'>
 							{/* Top 3 */}
-							{}
-							<div className='mb-8'>
+							<div className='flex mb-8'>
 								{currentResult?.results.map((result, index) => (
 									<div key={result.participantId} className='mb-6'>
 										{index < 3 && (
 											<div
-												className={`bg-[#000816] bg-opacity-60 p-6 rounded-lg shadow-md ${
+												className={`bg-[#000816] bg-opacity-60 p-6 flex-1 flex flex-col gap-2 rounded-lg ${
 													index === 0 ? "border-4 border-primary" : ""
 												}`}
 											>
@@ -134,10 +132,10 @@ const ResultsSection = ({ selectedTab, categories }) => {
 													<img
 														src={result.img}
 														alt={result.name}
-														className='object-cover w-16 h-16 mr-4 rounded-full'
+														className='object-cover w-12 h-16 rounded-md'
 													/>
 													<div>
-														<h3 className='text-2xl text-primary'>
+														<h3 className='text-primary'>
 															{result.name}
 														</h3>
 														<p className='text-white'>
@@ -156,11 +154,11 @@ const ResultsSection = ({ selectedTab, categories }) => {
 								{currentResult?.results.map((result, index) => (
 									<div key={result.participantId}>
 										{index >= 3 && (
-											<div className='bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-4'>
+											<div className='bg-[#000816] bg-opacity-60 px-4 py-2 rounded-lg shadow-md mb-4'>
 												<h3 className='text-xl text-primary'>
 													{result.name}
 												</h3>
-												<p className='text-white'>
+												<p className='m-0 text-white'>
 													Puntos: {result.points}
 												</p>
 											</div>
