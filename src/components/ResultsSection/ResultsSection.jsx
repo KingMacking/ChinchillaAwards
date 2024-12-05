@@ -14,7 +14,6 @@ const ResultsSection = ({ selectedTab, categories }) => {
 					: "chinchilla-awards-votes-clips";
 
 			const { data, error } = await supabase.from(tableName).select("user_votes");
-			console.log(data);
 
 			if (error) {
 				toast.error("Error al obtener los votos.");
@@ -89,21 +88,16 @@ const ResultsSection = ({ selectedTab, categories }) => {
 		fetchAndSetResults();
 	}, [selectedTab]);
 
-
-	
-    const currentResults = results.find((result) => {
-        console.log(result);
-        return result.categoryId === selectedCategory
-        
-    });
-    console.log('resultados actuales:' + currentResults);
+	const currentResult = results.find((result) => {
+		console.log(result);
+		return result.categoryId === selectedCategory;
+	});
 	return (
 		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 			{/* Lista de categorías */}
 			<div className='flex items-start'>
 				<div className='flex flex-col flex-[1]'>
 					{categories.map((item) => {
-						console.log(item);
 						return (
 							<button
 								key={item.id}
@@ -126,59 +120,53 @@ const ResultsSection = ({ selectedTab, categories }) => {
 					{selectedCategory && (
 						<div className='result-details'>
 							{/* Top 3 */}
-                            {
-                                
-                            }
+							{}
 							<div className='mb-8'>
-								{results
-									.filter((result) => result.categoryId === selectedCategory)
-									.map((result, index) => (
-										<div key={result.participantId} className='mb-6'>
-											{index < 3 && (
-												<div
-													className={`bg-[#000816] bg-opacity-60 p-6 rounded-lg shadow-md ${
-														index === 0 ? "border-4 border-primary" : ""
-													}`}
-												>
-													<div className='flex items-center'>
-														<img
-															src={result.img}
-															alt={result.name}
-															className='object-cover w-16 h-16 mr-4 rounded-full'
-														/>
-														<div>
-															<h3 className='text-2xl text-primary'>
-																{result.name}
-															</h3>
-															<p className='text-white'>
-																Puntos: {result.points}
-															</p>
-														</div>
+								{currentResult.results.map((result, index) => (
+									<div key={result.participantId} className='mb-6'>
+										{index < 3 && (
+											<div
+												className={`bg-[#000816] bg-opacity-60 p-6 rounded-lg shadow-md ${
+													index === 0 ? "border-4 border-primary" : ""
+												}`}
+											>
+												<div className='flex items-center'>
+													<img
+														src={result.img}
+														alt={result.name}
+														className='object-cover w-16 h-16 mr-4 rounded-full'
+													/>
+													<div>
+														<h3 className='text-2xl text-primary'>
+															{result.name}
+														</h3>
+														<p className='text-white'>
+															Puntos: {result.points}
+														</p>
 													</div>
 												</div>
-											)}
-										</div>
-									))}
+											</div>
+										)}
+									</div>
+								))}
 							</div>
 
 							{/* Resto de los participantes */}
 							<div>
-								{results
-									.filter((result) => result.categoryId === selectedCategory)
-									.map((result, index) => (
-										<div key={result.participantId}>
-											{index >= 3 && (
-												<div className='bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-4'>
-													<h3 className='text-xl text-primary'>
-														{result.name}
-													</h3>
-													<p className='text-white'>
-														Puntos: {result.points}
-													</p>
-												</div>
-											)}
-										</div>
-									))}
+								{currentResult.results.map((result, index) => (
+									<div key={result.participantId}>
+										{index >= 3 && (
+											<div className='bg-[#000816] bg-opacity-60 p-4 rounded-lg shadow-md mb-4'>
+												<h3 className='text-xl text-primary'>
+													{result.name}
+												</h3>
+												<p className='text-white'>
+													Puntos: {result.points}
+												</p>
+											</div>
+										)}
+									</div>
+								))}
 							</div>
 						</div>
 					)}
