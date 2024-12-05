@@ -114,7 +114,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 			</div>
 
 			{/* Resultados */}
-			<div className=''>
+			<div className='flex-[1]'>
 				{selectedCategory && (
 					<div className='result-details'>
 						{/* Top 1 */}
@@ -144,7 +144,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 										)}
 									</div>
 								))} */}
-							<div key={currentResult?.results[0].participantId} className='mb-4'>
+							<div key={currentResult?.results[0].participantId} className='w-full mb-4'>
 								<div
 									className={`bg-[#000816] bg-opacity-60 p-6 flex-1 flex flex-col gap-4 rounded-lg border-2 border-primary`}
 								>
