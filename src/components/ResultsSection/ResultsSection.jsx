@@ -59,8 +59,8 @@ const ResultsSection = ({ selectedTab, categories, goBack }) => {
 					return {
 						participantId,
 						points,
-						name: participant.name,
-						img: `/assets/participants-pictures/${participant.image}`,
+						name: selectedTab === 'categories' ? participant.name : participant.clipName,
+						img: selectedTab === 'categories' ? `/assets/participants-pictures/${participant.image}` : null,
 					};
 				});
 
