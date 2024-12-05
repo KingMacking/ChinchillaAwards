@@ -90,9 +90,9 @@ const ResultsSection = ({ selectedTab, categories }) => {
 		fetchAndSetResults();
 	}, [selectedTab]);
 
-    console.log(results);
-    
+	console.log(results);
 
+	const currentResults = results.filter((result) => result.categoryId === selectedCategory);
 	return (
 		<div className='w-full max-w-4xl p-6 mx-auto text-white bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
 			{/* Lista de categorías */}
@@ -124,7 +124,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 							{/* Top 3 */}
 							<div className='mb-8'>
 								{results
-									.filter((result) => result.categoryId === selectedCategory).results
+									.filter((result) => result.categoryId === selectedCategory)
 									.map((result, index) => (
 										<div key={result.participantId} className='mb-6'>
 											{index < 3 && (
@@ -157,7 +157,7 @@ const ResultsSection = ({ selectedTab, categories }) => {
 							{/* Resto de los participantes */}
 							<div>
 								{results
-									.filter((result) => result.categoryId === selectedCategory).results
+									.filter((result) => result.categoryId === selectedCategory)
 									.map((result, index) => (
 										<div key={result.participantId}>
 											{index >= 3 && (
