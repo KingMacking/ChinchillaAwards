@@ -9,7 +9,7 @@ import ResultsSection from "../ResultsSection/ResultsSection";
 function VotingApp() {
 	const [user, setUser] = useState(null);
 	const [currentVoteType, setCurrentVoteType] = useState(null);
-	const [hasVoted, setHasVoted] = useState(false);
+	// const [hasVoted, setHasVoted] = useState(false);
 	const [loading, setLoading] = useState(false);
 
 	// Verificar si el usuario ya está autenticado
@@ -25,39 +25,39 @@ function VotingApp() {
 	}, []);
 
 	// Verificar si el usuario ya votó
-	useEffect(() => {
-		const checkIfVoted = async () => {
-			if (!currentVoteType) return;
+	// useEffect(() => {
+	// 	const checkIfVoted = async () => {
+	// 		if (!currentVoteType) return;
 
-			setLoading(true);
+	// 		setLoading(true);
 
-			try {
-				const tableName =
-					currentVoteType === "categories"
-						? "chinchilla-awards-votes-categories"
-						: "chinchilla-awards-votes-clips";
+	// 		try {
+	// 			const tableName =
+	// 				currentVoteType === "categories"
+	// 					? "chinchilla-awards-votes-categories"
+	// 					: "chinchilla-awards-votes-clips";
 
-				const { data, error } = await supabase.from(tableName).select("*");
+	// 			const { data, error } = await supabase.from(tableName).select("*");
 
-				if (error && error.code !== "PGRST116") {
-					throw error;
-				}
+	// 			if (error && error.code !== "PGRST116") {
+	// 				throw error;
+	// 			}
 
-				if (data && data.length > 0) {
-					setHasVoted(true); // Usuario ya votó
-				} else {
-					setHasVoted(false); // Usuario no ha votado
-				}
-			} catch (error) {
-				toast.error("Error verificando los votos. Por favor, intenta nuevamente.");
-				setCurrentVoteType(null)
-			} finally {
-				setLoading(false);
-			}
-		};
+	// 			if (data && data.length > 0) {
+	// 				setHasVoted(true); // Usuario ya votó
+	// 			} else {
+	// 				setHasVoted(false); // Usuario no ha votado
+	// 			}
+	// 		} catch (error) {
+	// 			toast.error("Error verificando los votos. Por favor, intenta nuevamente.");
+	// 			setCurrentVoteType(null)
+	// 		} finally {
+	// 			setLoading(false);
+	// 		}
+	// 	};
 
-		checkIfVoted();
-	}, [currentVoteType]);
+	// 	checkIfVoted();
+	// }, [currentVoteType]);
 
 	// Función para registrar los votos
 	const handleVote = async (votes) => {
@@ -147,22 +147,22 @@ function VotingApp() {
 		return <p className='text-white'>Cargando...</p>;
 	}
 
-	if (hasVoted) {
-		return (
-			<main className='flex flex-col items-center justify-center h-screen p-4 text-center bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
-				<h1 className='text-4xl font-bold text-primary'>¡Ya votaste en esta sección!</h1>
-				<p className='text-lg text-white'>
-					Gracias por participar en los Chinchilla Awards.
-				</p>
-				<button
-					onClick={() => setCurrentVoteType(null)}
-					className='px-6 py-3 mt-4 text-lg font-semibold text-black rounded-lg bg-primary hover:bg-opacity-80'
-				>
-					Volver a la Selección
-				</button>
-			</main>
-		);
-	}
+	// if (hasVoted) {
+	// 	return (
+	// 		<main className='flex flex-col items-center justify-center h-screen p-4 text-center bg-[#000816] bg-opacity-50 rounded-lg shadow-md backdrop-blur-md'>
+	// 			<h1 className='text-4xl font-bold text-primary'>¡Ya votaste en esta sección!</h1>
+	// 			<p className='text-lg text-white'>
+	// 				Gracias por participar en los Chinchilla Awards.
+	// 			</p>
+	// 			<button
+	// 				onClick={() => setCurrentVoteType(null)}
+	// 				className='px-6 py-3 mt-4 text-lg font-semibold text-black rounded-lg bg-primary hover:bg-opacity-80'
+	// 			>
+	// 				Volver a la Selección
+	// 			</button>
+	// 		</main>
+	// 	);
+	// }
 
 	return (
 		<main className='flex flex-col items-start h-auto gap-6 py-12 '>
