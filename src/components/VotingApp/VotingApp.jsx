@@ -7,22 +7,22 @@ import CATEGORIES_CLIPS from "../../data/clipsCategories.json";
 import ResultsSection from "../ResultsSection/ResultsSection";
 
 function VotingApp() {
-	const [user, setUser] = useState(null);
+	// const [user, setUser] = useState(null);
 	const [currentVoteType, setCurrentVoteType] = useState(null);
 	// const [hasVoted, setHasVoted] = useState(false);
 	const [loading, setLoading] = useState(false);
 
 	// Verificar si el usuario ya está autenticado
-	useEffect(() => {
-		const session = supabase.auth.getSession();
-		setUser(session?.user ?? null);
+	// useEffect(() => {
+	// 	const session = supabase.auth.getSession();
+	// 	setUser(session?.user ?? null);
 
-		const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-			setUser(session?.user ?? null);
-		});
+	// 	const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+	// 		setUser(session?.user ?? null);
+	// 	});
 
-		return () => listener.unsubscribe();
-	}, []);
+	// 	return () => listener.unsubscribe();
+	// }, []);
 
 	// Verificar si el usuario ya votó
 	// useEffect(() => {
@@ -60,55 +60,55 @@ function VotingApp() {
 	// }, [currentVoteType]);
 
 	// Función para registrar los votos
-	const handleVote = async (votes) => {
-		try {
-			const tableName =
-				currentVoteType === "categories"
-				? "chinchilla-awards-votes-categories"
-				: "chinchilla-awards-votes-clips";
+	// const handleVote = async (votes) => {
+	// 	try {
+	// 		const tableName =
+	// 			currentVoteType === "categories"
+	// 			? "chinchilla-awards-votes-categories"
+	// 			: "chinchilla-awards-votes-clips";
 
-			const { error: voteError } = await supabase
-				.from(tableName)
-				.insert([{ user_email: user.email, user_votes: votes }]);
+	// 		const { error: voteError } = await supabase
+	// 			.from(tableName)
+	// 			.insert([{ user_email: user.email, user_votes: votes }]);
 
-			if (voteError) {
-				if (voteError.message.includes("duplicate key value")) {
-					toast.error("Ya votaste en esta sección.");
-					return;
-				}
-				toast.error("Error al registrar los votos. Intenta nuevamente.");
-				return;
-			}
+	// 		if (voteError) {
+	// 			if (voteError.message.includes("duplicate key value")) {
+	// 				toast.error("Ya votaste en esta sección.");
+	// 				return;
+	// 			}
+	// 			toast.error("Error al registrar los votos. Intenta nuevamente.");
+	// 			return;
+	// 		}
 
-			toast.success("Votos registrados con éxito.");
+	// 		toast.success("Votos registrados con éxito.");
 
-			setCurrentVoteType(null);
-		} catch (error) {
-			toast.error("Ocurrió un error inesperado. Por favor, intenta nuevamente.");
-		}
-	};
+	// 		setCurrentVoteType(null);
+	// 	} catch (error) {
+	// 		toast.error("Ocurrió un error inesperado. Por favor, intenta nuevamente.");
+	// 	}
+	// };
 
-	const handleLogout = async () => {
-		try {
-			// Cerrar sesión en Supabase
-			const { error } = await supabase.auth.signOut();
+	// const handleLogout = async () => {
+	// 	try {
+	// 		// Cerrar sesión en Supabase
+	// 		const { error } = await supabase.auth.signOut();
 
-			if (error) {
-				throw new Error(error.message); // Si hay error, lanzamos la excepción
-			}
+	// 		if (error) {
+	// 			throw new Error(error.message); // Si hay error, lanzamos la excepción
+	// 		}
 
-			// Mostrar mensaje de éxito
-			toast.success("Sesión cerrada correctamente.");
-		} catch (error) {
-			// Manejo de errores si ocurre un fallo en el proceso
-			console.error("Error al cerrar sesión:", error);
-			toast.error("Error al cerrar sesión: " + error.message);
-		}
-	};
+	// 		// Mostrar mensaje de éxito
+	// 		toast.success("Sesión cerrada correctamente.");
+	// 	} catch (error) {
+	// 		// Manejo de errores si ocurre un fallo en el proceso
+	// 		console.error("Error al cerrar sesión:", error);
+	// 		toast.error("Error al cerrar sesión: " + error.message);
+	// 	}
+	// };
 
-	if (!user) {
-		return <LoginScreen />;
-	}
+	// if (!user) {
+	// 	return <LoginScreen />;
+	// }
 
 	if (!currentVoteType) {
 		return (
