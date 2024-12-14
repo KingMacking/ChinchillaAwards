@@ -17,10 +17,15 @@ function LoginScreen() {
 		if (diff <= 0) {
 			setTimeLeft("¡El evento ha comenzado!");
 		} else {
-			const days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
-			const hours = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-			const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-			const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0'); 
+			const days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, "0");
+			const hours = String(
+				Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+			).padStart(2, "0");
+			const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(
+				2,
+				"0"
+			);
+			const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, "0");
 			setTimeLeft(`${days} : ${hours} : ${minutes} : ${seconds}`);
 		}
 	};
@@ -53,26 +58,32 @@ function LoginScreen() {
 	return (
 		<div className='flex flex-col items-center justify-center w-screen h-screen'>
 			<div className='bg-[#000816] bg-opacity-50 rounded-lg h-auto p-10 shadow-md backdrop-blur-md max-w-4xl w-full text-center'>
-				<img src='/assets/thechinchillaawardslogo.png' alt='Logo' className='max-w-full mx-auto mb-4 md:max-w-xl' />
+				<img
+					src='/assets/thechinchillaawardslogo.png'
+					alt='Logo'
+					className='max-w-full mx-auto mb-4 md:max-w-xl'
+				/>
 
 				{/* Contador */}
 				<p className='p-5 mb-6 font-semibold text-white border border-white rounded-md text-3xlxl sm:text-4xl lg:text-8xl'>
 					{timeLeft}
 				</p>
+				<p className='mb-6 text-white'>
+					El periodo para votar ha finalizado, pronto tendremos los resultados.
+				</p>
+				<p className='mb-6 font-bold text-white'>
+					¡Gracias por participar de los Chinchilla Awards!
+				</p>
 
 				{/* Link a Twitch */}
-			<a
-				href='https://www.twitch.tv/gallardd'
-				target='_blank'
-				rel='noopener noreferrer'
-				className='inline-block px-6 py-3 mt-4 font-semibold text-white transition-all bg-[#9146FF] rounded-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white'
-			>
-				¡Mirá el canal de Gallardd en Twitch!
-			</a>
-
-				{/* <p className='mb-6 text-white'>
-					Inicia sesión con tu cuenta de Google para participar.
-				</p> */}
+				<a
+					href='https://www.twitch.tv/gallardd'
+					target='_blank'
+					rel='noopener noreferrer'
+					className='inline-block px-6 py-3 mt-4 font-semibold text-white transition-all bg-[#9146FF] rounded-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white'
+				>
+					¡Mirá el canal de Gallardd en Twitch!
+				</a>
 
 				{/* <button
 					onClick={handleGoogleLogin}
