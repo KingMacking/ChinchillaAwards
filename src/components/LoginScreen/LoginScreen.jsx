@@ -60,6 +60,16 @@ function LoginScreen() {
 					{timeLeft}
 				</p>
 
+				{/* Link a Twitch */}
+			<a
+				href='https://www.twitch.tv/gallardd'
+				target='_blank'
+				rel='noopener noreferrer'
+				className='inline-block px-6 py-3 mt-4 font-semibold text-white transition-all bg-[#9146FF] rounded-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white'
+			>
+				¡Mirá el canal de Gallardd en Twitch!
+			</a>
+
 				{/* <p className='mb-6 text-white'>
 					Inicia sesión con tu cuenta de Google para participar.
 				</p> */}
