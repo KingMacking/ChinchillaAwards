@@ -60,9 +60,9 @@ function LoginScreen() {
 					{timeLeft}
 				</p>
 
-				<p className='mb-6 text-white'>
+				{/* <p className='mb-6 text-white'>
 					Inicia sesión con tu cuenta de Google para participar.
-				</p>
+				</p> */}
 
 				{/* <button
 					onClick={handleGoogleLogin}
