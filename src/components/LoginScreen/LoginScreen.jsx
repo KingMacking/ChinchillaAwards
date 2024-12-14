@@ -4,7 +4,7 @@ import { toast } from "sonner";
 
 function LoginScreen() {
 	// Estado para el tiempo restante
-	const [timeLeft, setTimeLeft] = useState("00 : 00 : 00 : 00");
+	const [timeLeft, setTimeLeft] = useState("31 : 24 : 60 : 60");
 
 	// Configurar la fecha del evento (14 de diciembre a las 17hs)
 	const eventDate = new Date("2024-12-14T17:00:00-03:00"); // Hora de Argentina (UTC-3)
@@ -34,21 +34,21 @@ function LoginScreen() {
 	}, []);
 
 	// Función para manejar el login con Google
-	const handleGoogleLogin = async () => {
-		try {
-			const { error } = await supabase.auth.signInWithOAuth({
-				provider: "google",
-				options: {
-					redirectTo: "http://thechinchillaawards.netlify.app",
-				},
-			});
-			if (error) {
-				toast.error("Error al iniciar sesión con Google.");
-			}
-		} catch (error) {
-			toast.error("Algo salió mal. Por favor, intente nuevamente.");
-		}
-	};
+	// const handleGoogleLogin = async () => {
+	// 	try {
+	// 		const { error } = await supabase.auth.signInWithOAuth({
+	// 			provider: "google",
+	// 			options: {
+	// 				redirectTo: "http://thechinchillaawards.netlify.app",
+	// 			},
+	// 		});
+	// 		if (error) {
+	// 			toast.error("Error al iniciar sesión con Google.");
+	// 		}
+	// 	} catch (error) {
+	// 		toast.error("Algo salió mal. Por favor, intente nuevamente.");
+	// 	}
+	// };
 
 	return (
 		<div className='flex flex-col items-center justify-center w-screen h-screen'>
@@ -64,12 +64,12 @@ function LoginScreen() {
 					Inicia sesión con tu cuenta de Google para participar.
 				</p>
 
-				<button
+				{/* <button
 					onClick={handleGoogleLogin}
 					className='w-full p-3 font-medium text-black transition-all rounded-md bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-secondary'
 				>
 					Iniciar sesión con Google
-				</button>
+				</button> */}
 			</div>
 		</div>
 	);
